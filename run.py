@@ -34,7 +34,7 @@ def play_game():
     """
     Runs through the logic for the game,
     displays the board and allows the game
-    to start.
+    to start and finish.
     """
     display_board()
     while GAME_ACTIVE:
@@ -44,6 +44,13 @@ def play_game():
         check_game_over()
 
         switch_player()
+
+
+    if WINNER == 'X' or WINNER == 'O':
+        print(WINNER + "WON.")
+    elif WINNER == None:
+        print("It's a tie.")
+
 
 
 def handle_turn(player):
