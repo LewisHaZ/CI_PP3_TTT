@@ -26,8 +26,13 @@ def play_game():
     to start.
     """
     display_board()
+    while game_active:
+        
+        handle_turn(current_player)
 
-    handle_turn()
+        check_game_over()
+
+        switch_player()
 
 
 def handle_turn():
