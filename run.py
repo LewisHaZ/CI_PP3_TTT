@@ -150,7 +150,16 @@ def check_diagonals():
     If the condition is met then it ends the 
     game.
     """
+    global GAME_ACTIVE
+    diag_1 = board[0] == board[4] == board[8] != "-"
+    diag_2 = board[6] == board[4] == board[2] != "-"
     
+    if diag_1 or diag_2:
+        GAME_ACTIVE = False
+    if diag_1:
+        return board[0]
+    elif diag_2:
+        return board[6]
     return
 
 
