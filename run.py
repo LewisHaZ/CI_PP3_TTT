@@ -4,9 +4,13 @@
 # Something to handle the turns
 # Function to check for win or tie
 # Function to switch the turn from x to o
+import sys
 import time
 from time import sleep
+import os
+import random
 from colors import Color as Col
+import validation as val
 
 
 def logo():
@@ -15,20 +19,21 @@ def logo():
     """
     print(Col.BLUE + "Welcome to:")
     print(" ")
-
-████████╗██╗ ██████╗    ████████╗ █████╗  ██████╗    ████████╗ ██████╗ ███████╗
-╚══██╔══╝██║██╔════╝    ╚══██╔══╝██╔══██╗██╔════╝    ╚══██╔══╝██╔═══██╗██╔════╝
-   ██║   ██║██║            ██║   ███████║██║            ██║   ██║   ██║█████╗  
-   ██║   ██║██║            ██║   ██╔══██║██║            ██║   ██║   ██║██╔══╝  
-   ██║   ██║╚██████╗       ██║   ██║  ██║╚██████╗       ██║   ╚██████╔╝███████╗
-   ╚═╝   ╚═╝ ╚═════╝       ╚═╝   ╚═╝  ╚═╝ ╚═════╝       ╚═╝    ╚═════╝ ╚══════╝
-                                                                               
-                    ██╗  ██╗         ██████╗         ██╗  ██╗                  
-                    ╚██╗██╔╝        ██╔═══██╗        ╚██╗██╔╝                  
-                     ╚███╔╝         ██║   ██║         ╚███╔╝                   
-                     ██╔██╗         ██║   ██║         ██╔██╗                   
-                    ██╔╝ ██╗        ╚██████╔╝        ██╔╝ ██╗                  
-                    ╚═╝  ╚═╝         ╚═════╝         ╚═╝  ╚═╝                  
+    print(Col.BLUE + "  _____ _        _____            _____          ")
+    print(Col.RED + "  |_   _(_)      |_   _|          |_   _|         ")
+    print(Col.BLUE + "   | |  _  ___    | | __ _  ___    | | ___   ___ ")
+    print(Col.RED + "    | | | |/ __|   | |/ _` |/ __|   | |/ _ \ / _ \")
+    print(Col.BLUE + "   | | | | (__    | | (_| | (__    | | (_) |  __/")
+    print(Col.RED + "    \_/ |_|\___|   \_/\__,_|\___|   \_/\___/ \___|")
+    print(Col.BLUE + "                                                 ")
+    print(Col.RED + "                                                 ")
+    print(Col.BLUE + "     __   __  _   _____   _  __   __            ")
+    print(Col.RED + "      \ \ / / | | |  _  | | | \ \ / /            ")
+    print(Col.BLUE + "      \ V /  | | | | | | | |  \ V /             ")
+    print(Col.RED + "       /   \  | | | | | | | |  /   \             ")
+    print(Col.BLUE + "     / /^\ \ | | \ \_/ / | | / /^\ \            ")
+    print(Col.RED + "      \/   \/ | |  \___/  | | \/   \/            ")
+    print(Col.BLUE + "             |_|         |_|                    ")
     print(" ")
     print(" ")
     
