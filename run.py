@@ -38,11 +38,13 @@ def logo():
     print(" ")
     time.sleep(1)
 
+
 def cls():
     """
     Clear the console
     """
     os.system("cls" if os.name == "nt" else "clear")
+
 
 def separate_line():
     """
@@ -52,6 +54,7 @@ def separate_line():
     print("- "*30)
     print(" ")
 
+
 def main_menu() -> str:
     """
     This function will appear below the logo for the game,
@@ -60,6 +63,26 @@ def main_menu() -> str:
     time.sleep(1)
     print(Col.YELLOW + "Please select from the following: ")
     menu_options = "1. Game rules\n2. Start game\n"
+    menu_option_selected = input(menu_options)
+    separate_line()
+
+    # Validate the input
+    while menu_option_selected not in ("1", "2"):
+        print(Col.YELLOW + "Please select from 1 or 2: ")
+        menu_option_selected = input(menu_options)
+        separate_line()
+    
+    if menu_option_selected == "1"
+        cls()
+        logo()
+        rules()
+    
+    elif menu_option_selected == "2"
+        play_game()
+    
+    return menu_option_selected
+
+
 # Game board
 board = ["-", "-", "-",
          "-", "-", "-",
