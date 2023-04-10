@@ -27,7 +27,16 @@ def play_game():
     """
     display_board()
 
-    handle__turn()
+    handle_turn()
+
+
+def handle_turn()
+    """
+    A function to deal with the game
+    delegating each player their turn
+    and switching between
+    """
+    position = input("Choose a position from 1-9: ")
 
 
 play_game()
