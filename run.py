@@ -39,7 +39,7 @@ def handle_turn():
     """
     A function to deal with the game
     delegating each player their turn
-    and switching between
+    and switching between.
     """
     position = input("Choose a position from 1-9: ")
     
@@ -50,7 +50,32 @@ def handle_turn():
 
 
 def check_game_over():
+    """
+    A function to check if the game
+    has finished and what the condition
+    is for the game over state win or tie.
+    """
     check_if_win()
     check_if_tie()
 
+
+def check_if_win():
+    """
+    A function to check if a player has won
+    the game: this will check rows, columns
+    and diagonals for a win game state.
+    """
+    return
+
+
+def check_if_tie():
+    """
+    A function to check if a player has tied
+    the game: this will check rows, columns 
+    and diagonals for a tie game state.
+    """
+    return
+
+
+    
 play_game()
