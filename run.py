@@ -48,4 +48,9 @@ def handle_turn():
     board[position] = "X"
     display_board()
 
+
+def check_game_over():
+    check_if_win()
+    check_if_tie()
+
 play_game()
