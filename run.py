@@ -122,6 +122,24 @@ def check_rows():
 
 
 def check_columns():
+    """
+    Checking if any of the columns have the same
+    value BUT not the initial dash placeholder.
+    If the condition is met then it ends the 
+    game.
+    """
+    global GAME_ACTIVE
+    col_1 = board[0] == board[3] == board[6] != "-"
+    col_2 = board[1] == board[4] == board[7] != "-"
+    col_3 = board[2] == board[5] == board[8] != "-"
+    if col_1 or col_2 or col_3:
+        GAME_ACTIVE = False
+    if col_1:
+        return board[0]
+    elif col_2:
+        return board[1]
+    elif col_3:
+        return board[2]
     return
 
 
