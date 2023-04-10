@@ -45,7 +45,6 @@ def play_game():
 
         switch_player()
 
-
     if WINNER == 'X' or WINNER == 'O':
         print(WINNER + " WON.")
     elif WINNER == None:
@@ -58,7 +57,11 @@ def handle_turn(player):
     delegating each player their turn
     and switching between.
     """
+    print(player + "'s turn.")
     position = input("Choose a position from 1-9: ")
+
+    if position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        position = input("Invalid input. Choose a position from 1-9: ")
     
     position = int(position) - 1
 
@@ -166,8 +169,12 @@ def check_if_tie():
     """
     A function to check if a player has tied
     the game: this will check rows, columns 
-    and diagonals for a tie game state.
+    and diagonals for the - symbol, if there
+    is no - then the game is a tie.
     """
+    global GAME_ACTIVE
+    if "-" not in board:
+        GAME_ACTIVE = False
     return
 
 
