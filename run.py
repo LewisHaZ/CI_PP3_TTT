@@ -38,5 +38,9 @@ def handle_turn():
     """
     position = input("Choose a position from 1-9: ")
     
+    position = int(position) - 1
+
+    board[position] = "X"
+    display_board()
 
 play_game()
