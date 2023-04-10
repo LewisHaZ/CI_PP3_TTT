@@ -1,3 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Tic Tac Toe game
+# We want to have game board, and to display it
+# Something to handle play game
+# Something to handle the turns
+# Function to check for win or tie
+# Function to switch the turn from x to o
+
+
