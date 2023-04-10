@@ -86,6 +86,18 @@ def check_if_win():
     return
 
 
+def check_rows():
+    return
+
+
+def check_columns():
+    return
+
+
+def check_diagonals():
+    return
+
+
 def check_if_tie():
     """
     A function to check if a player has tied
