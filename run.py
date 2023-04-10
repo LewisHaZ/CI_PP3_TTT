@@ -5,9 +5,13 @@
 # Function to check for win or tie
 # Function to switch the turn from x to o
 
+# Game board
 board = ["-","-","-",
          "-","-","-",
          "-","-","-",]
+
+# Is the Game running?
+game_active = True
 
 def display_board():
     """
@@ -77,5 +81,14 @@ def check_if_tie():
     return
 
 
-    
+def switch_player():
+    """
+    A function to switch from x's turn
+    to o's turn and this repeats until
+    a game state has been reached
+    """
+
+    return
+
+
 play_game()
