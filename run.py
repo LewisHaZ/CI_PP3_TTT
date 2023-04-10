@@ -88,11 +88,11 @@ def check_if_win():
     col_wins = check_columns()
     diag_wins = check_diagonals()
     if row_wins:
-        WINNER = row_wins()
+        WINNER = row_wins
     elif col_wins:
-        WINNER = col_wins()
+        WINNER = col_wins
     elif diag_wins:
-        WINNER = diag_wins()
+        WINNER = diag_wins
     else:
         WINNER = None
 
@@ -144,6 +144,13 @@ def check_columns():
 
 
 def check_diagonals():
+    """
+    Checking if any of the diagonals have the same
+    value BUT not the initial dash placeholder.
+    If the condition is met then it ends the 
+    game.
+    """
+    
     return
 
 
