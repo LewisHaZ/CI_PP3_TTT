@@ -6,12 +6,19 @@
 # Function to switch the turn from x to o
 
 # Game board
-board = ["-","-","-",
-         "-","-","-",
-         "-","-","-",]
+board = ["-", "-", "-",
+         "-", "-", "-",
+         "-", "-", "-",]
 
 # Is the Game running?
-game_active = True
+GAME_ACTIVE = True
+
+# Who won? Or is it a tie?
+WINNER = None
+
+# Whose turn is it?
+CURRENT_PLAYER = 'X'
+
 
 def display_board():
     """
@@ -30,16 +37,16 @@ def play_game():
     to start.
     """
     display_board()
-    while game_active:
+    while GAME_ACTIVE:
         
-        handle_turn(current_player)
+        handle_turn(CURRENT_PLAYER)
 
         check_game_over()
 
         switch_player()
 
 
-def handle_turn():
+def handle_turn(player):
     """
     A function to deal with the game
     delegating each player their turn
