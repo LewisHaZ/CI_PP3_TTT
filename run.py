@@ -10,8 +10,24 @@ board = ["-","-","-",
          "-","-","-",]
 
 def display_board():
+    """
+    A function to print the lines for 
+    the game board.
+    """
     print(board[0] + " | " + board[1] + " | " + board[2])
     print(board[3] + " | " + board[4] + " | " + board[5])
     print(board[6] + " | " + board[7] + " | " + board[8])
 
-display_board()
+
+def play_game():
+    """
+    Runs through the logic for the game,
+    displays the board and allows the game
+    to start.
+    """
+    display_board()
+
+    handle__turn()
+
+
+play_game()
