@@ -47,10 +47,9 @@ def play_game():
 
 
     if WINNER == 'X' or WINNER == 'O':
-        print(WINNER + "WON.")
+        print(WINNER + " WON.")
     elif WINNER == None:
         print("It's a tie.")
-
 
 
 def handle_turn(player):
@@ -63,7 +62,7 @@ def handle_turn(player):
     
     position = int(position) - 1
 
-    board[position] = "X"
+    board[position] = player
     display_board()
 
 
@@ -178,6 +177,11 @@ def switch_player():
     to o's turn and this repeats until
     a game state has been reached
     """
+    global CURRENT_PLAYER
+    if CURRENT_PLAYER == "X":
+        CURRENT_PLAYER = "O"
+    elif CURRENT_PLAYER == "O":
+        CURRENT_PLAYER = "X"
 
     return
 
