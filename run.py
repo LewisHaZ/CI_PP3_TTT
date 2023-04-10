@@ -17,7 +17,7 @@ def logo():
     """ 
     Displays game name
     """
-    print(Col.BLUE + "Welcome to:")
+    print(Col.YELLOW + "Welcome to:")
     print(" ")
     print(Col.BLUE + "  _____ _        _____            _____          ")
     print(Col.RED + "  |_   _(_)      |_   _|          |_   _|         ")
@@ -36,11 +36,30 @@ def logo():
     print(Col.BLUE + "             |_|         |_|                    ")
     print(" ")
     print(" ")
-    
+    time.sleep(1)
 
+def cls():
+    """
+    Clear the console
+    """
+    os.system("cls" if os.name == "nt" else "clear")
 
-time.sleep(1)
+def separate_line():
+    """
+    Print '-' lines to separate messages
+    """
+    print(" ")
+    print("- "*30)
+    print(" ")
 
+def main_menu() -> str:
+    """
+    This function will appear below the logo for the game,
+    The user can select to view the rules or to start game.
+    """
+    time.sleep(1)
+    print(Col.YELLOW + "Please select from the following: ")
+    menu_options = "1. Game rules\n2. Start game\n"
 # Game board
 board = ["-", "-", "-",
          "-", "-", "-",
