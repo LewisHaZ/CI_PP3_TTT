@@ -83,6 +83,9 @@ def check_if_win():
     the game: this will check rows, columns
     and diagonals for a win game state.
     """
+    row_wins = check_rows()
+    col_wins = check_columns()
+    diag_wins = check_diagonals()
     return
 
 
