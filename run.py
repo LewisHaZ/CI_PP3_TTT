@@ -6,13 +6,15 @@
 # Function to switch the turn from x to o
 import time
 from time import sleep
+from colors import Color as Col
 
 
 def logo():
     """ 
     Displays game name
     """
-    print("
+    print(Col.BLUE + "Welcome to:")
+    print(" ")
 
 ████████╗██╗ ██████╗    ████████╗ █████╗  ██████╗    ████████╗ ██████╗ ███████╗
 ╚══██╔══╝██║██╔════╝    ╚══██╔══╝██╔══██╗██╔════╝    ╚══██╔══╝██╔═══██╗██╔════╝
@@ -27,9 +29,11 @@ def logo():
                      ██╔██╗         ██║   ██║         ██╔██╗                   
                     ██╔╝ ██╗        ╚██████╔╝        ██╔╝ ██╗                  
                     ╚═╝  ╚═╝         ╚═════╝         ╚═╝  ╚═╝                  
-                                                                               
+    print(" ")
+    print(" ")
+    
 
-")
+
 time.sleep(1)
 
 # Game board
