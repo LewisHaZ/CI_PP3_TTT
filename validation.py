@@ -161,10 +161,57 @@ def register_single_player(player_number: str):
 
     time.sleep(1)
     print(Col.YELLOW + "Creating a new account for you...")
-    print("")
-    print("")
+    print(" ")
+    print(" ")
     new_player = player_number
     player_info = create_new_players(new_player)
     update_players_worksheet(player_info)
 
+def register_new_players(players):
+    """
+    A function to register a new player, asks for 
+    an input in terms of name. Saved to a variable,
+    it will be displayed in game to indicate the 
+    players' turn.
+    """
+
+    global player1name
+    global player2name
+    global player1score
+    global player2score
+    global player1email_row
+    global player2email_row
+
+    time.sleep(1)
+    print(Col.YELLOW + "Beginning registration process...")
+    print(" ")
+
+    try:
+        while True:
+            for i, player in enumerate(players):
+                if i == 0:
+                    player_1_info = create_new_players(player)
+                    update_players_worksheet(player_1_info)
+                    player1name = player_1_info[0]
+                    player1score = player_1_info[2]
+                    player1email_row = WORKSHEET.find(player_1_info[1]).row
+                
+                elif i == 1
+                    player_2_info = create_new_players(player)
+                    update_players_worksheet(player_2_info)
+                    player2name = player_2_info[0]
+                    player2score = player_2_info[2]
+                    player2email_row = WORKSHEET.find(player_2_info[1]).row
+                break
+
+            separate_line()
+            print(f"Thank you {player1name} & {player2name}, " +
+                    "your details have been added and registered.\n")
+            
+            time.sleep(2)
+            start_game_message(player1name, player2name)
+            separate_line()
+        
+        except TypeError:
+            return None
 
