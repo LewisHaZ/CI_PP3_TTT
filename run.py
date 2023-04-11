@@ -8,8 +8,8 @@ import sys
 import time
 from time import sleep
 import os
-import random
 from colors import Color as Col
+import validation as val
 
 
 def logo():
@@ -91,15 +91,15 @@ def rules():
     print(Col.YELLOW + "Game Rules are as follows: ")
     time.sleep(1)
     print("The goal of tic-tac-toe is to be the first player to get three" +
-        "in a row on a 3-by-3 grid")
+          "in a row on a 3-by-3 grid")
     time.sleep(1)
     print("This can be in a row, in a column or in a diagonal")
     time.sleep(1)
     print("Be careful though, you need to stop your opponent from doing" +
-            "the same")
+          "the same")
     time.sleep(1)
     print(Col.BLUE + "Tic Tac Toe is simple game of " +
-    "strategy and forward thinking.")
+                     "strategy and forward thinking.")
     time.sleep(1.5)
     print(Col.YELLOW + "So good luck and have fun!")
     time.sleep(1)
@@ -119,20 +119,22 @@ def start_game() -> str:
     answered = input(answer)
     separate_line()
 
-        # Validate if answered with 1 or 2
+    # Validate if answered with 1 or 2
     while answered not in ("1", "y", "2", "n"):
         print(Col.RED + "Please select from 1 or 2: ")
         answered = input(answer)
 
         separate_line()
-        
+       
     if answered == "1" or answered == "y":
         cls()
         logo()
-        
+        val.existing_acc(val.players)
+     
     elif answered == "2" or answered == "n":
         cls()
         logo()
+        val.register_new_players(val.players)
         
     return answered
 
@@ -153,7 +155,7 @@ CURRENT_PLAYER = 'X'
 
 def display_board():
     """
-    A function to print the lines for 
+    A function to print the lines for
     the game board.
     """
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -169,7 +171,7 @@ def play_game():
     """
     display_board()
     while GAME_ACTIVE:
-        
+
         handle_turn(CURRENT_PLAYER)
 
         check_game_over()
@@ -245,7 +247,7 @@ def check_rows():
     """
     Checking if any of the rows have the same
     value BUT not the initial dash placeholder.
-    If the condition is met then it ends the 
+    If the condition is met then it ends the
     game.
     """
     global GAME_ACTIVE
@@ -295,7 +297,7 @@ def check_diagonals():
     global GAME_ACTIVE
     diag_1 = board[0] == board[4] == board[8] != "-"
     diag_2 = board[6] == board[4] == board[2] != "-"
-    
+  
     if diag_1 or diag_2:
         GAME_ACTIVE = False
     if diag_1:
@@ -342,6 +344,7 @@ def main():
     """
     logo()
     start_game()
+
 
 if __name__ == "__main__":
     main()
