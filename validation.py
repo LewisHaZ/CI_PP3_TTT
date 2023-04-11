@@ -67,3 +67,6 @@ def existing_acc(players):
                 
             time.sleep(2)
             start_game_message(player1name, player2name)
+
+        except TypeError:
+            return None
