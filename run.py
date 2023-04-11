@@ -10,7 +10,6 @@ from time import sleep
 import os
 import random
 from colors import Color as Col
-import validation as val
 
 
 def logo():
