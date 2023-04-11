@@ -99,7 +99,7 @@ def validate_user_input(email: str):
     
     except EmailNotValidError as e:
         print(Col.RED + "\n" + str(e))
-        print(Col.RED + "Please type your email again.\n")
+        print(Col.RED + "Please type a correct email address.\n")
     
 
 def is_player_registered(email: str) -> bool:
@@ -114,3 +114,22 @@ def is_player_registered(email: str) -> bool:
         return True
     else:
         return False
+
+
+def input_correct_email(player: str):
+    """
+    A function to notify the player they have not 
+    typed a valid registered email address and 
+    nothing was found in the database.
+    @param player(sting): number of current player
+    """
+    print(Col.RED + "\nSorry, this email isn't registered with us.\n")
+    selected_option = email_not_registered()
+
+    if selected_option == "1":
+        print("Please type the email address again:")
+    
+    elif selected_option == "2":
+        register_account(player)
+
+
