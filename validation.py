@@ -290,9 +290,9 @@ def play_game_message(player1name: str, player2name: str):
     separate_line()
     print(Col.BLUE + "Ready?")
     print(Col.RED + f"{player1name}" + Col.YELLOW +
-            " & " + Col.BLUE + f"{player2name}")
+        " & " + Col.BLUE + f"{player2name}")
     print(Col.BLUE + "Let's play...")
     separate_line()
     time.sleep(2)
     cls()
-    play_game()
+    start_game()

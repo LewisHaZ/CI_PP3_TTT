@@ -72,15 +72,15 @@ def main_menu() -> str:
         print(Col.YELLOW + "Please select from 1 or 2: ")
         menu_option_selected = input(menu_options)
         separate_line()
-    
+
     if menu_option_selected == "1":
         cls()
         logo()
         rules()
-    
+
     elif menu_option_selected == "2":
         play_game()
-    
+
     return menu_option_selected
 
 
@@ -89,16 +89,18 @@ def rules():
     Displays to the player the rules for Tic Tac Toe,
     they can exit this menu with any key
     """
-    print(Col.YELLOW + "Game Rules are as follows: " )
+    print(Col.YELLOW + "Game Rules are as follows: ")
     time.sleep(1)
-    print("The goal of tic-tac-toe is to be the first player to get three in a row" +
-            "on a 3-by-3 grid")
+    print("The goal of tic-tac-toe is to be the first player to get three" +
+        "in a row on a 3-by-3 grid")
     time.sleep(1)
     print("This can be in a row, in a column or in a diagonal")
     time.sleep(1)
-    print("Be careful though, you need to stop your opponent from doing the same")
+    print("Be careful though, you need to stop your opponent from doing" +
+            "the same")
     time.sleep(1)
-    print(Col.BLUE + "Tic Tac Toe is simple game of strategy and forward thinking.")
+    print(Col.BLUE + "Tic Tac Toe is simple game of " +
+    "strategy and forward thinking.")
     time.sleep(1.5)
     print(Col.YELLOW + "So good luck and have fun!")
     time.sleep(1)
@@ -135,12 +137,10 @@ def rules():
         return answered
 
 
-
 # Game board
 board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-",]
-
 # Is the Game running?
 GAME_ACTIVE = True
 
