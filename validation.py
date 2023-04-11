@@ -111,7 +111,7 @@ def is_player_registered(email: str) -> bool:
     """
     email_column = WORKSHEET.col_values(2)
 
-    if email in email_column
+    if email in email_column:
         return True
     else:
         return False
@@ -197,7 +197,7 @@ def register_new_players(players):
                     player1score = player_1_info[2]
                     player1email_row = WORKSHEET.find(player_1_info[1]).row
                 
-                elif i == 1
+                elif i == 1:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
                     player2name = player_2_info[0]
@@ -213,8 +213,8 @@ def register_new_players(players):
             play_game_message(player1name, player2name)
             separate_line()
         
-        except TypeError:
-            return None
+    except TypeError:
+        return None
 
 
 def create_new_players(player_number: str) -> list:
@@ -267,8 +267,8 @@ def validate_username(player_name: str) -> bool:
         else:
             return True
 
-        except TypeError:
-            return False
+    except TypeError:
+        return False
 
 
 def update_players_worksheet(data: list):
