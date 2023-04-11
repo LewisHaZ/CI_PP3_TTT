@@ -32,12 +32,12 @@ def existing_acc(players):
     print(Col.BLUE + "Greetings user. " + 
         "Please enter your login details.")
 
-        global player1name
-        global player2name
-        global player1score
-        global player2score
-        global player1email_row
-        global player2email_row
+    global player1name
+    global player2name
+    global player1score
+    global player2score
+    global player1email_row
+    global player2email_row
 
         try:
             for i, player in enumrate(players):
