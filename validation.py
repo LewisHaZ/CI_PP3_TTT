@@ -101,3 +101,16 @@ def validate_user_input(email: str):
         print(Col.RED + "\n" + str(e))
         print(Col.RED + "Please type your email again.\n")
     
+
+def is_player_registered(email: str) -> bool:
+    """
+    A function to verify if the player is registered
+    yet. This checks against the database
+    @param email(string): Player's email address.
+    """
+    email_column = WORKSHEET.col_values(2)
+
+    if email in email_column
+        return True
+    else:
+        return False
