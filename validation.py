@@ -39,8 +39,9 @@ def existing_acc(players):
     global player1email_row
     global player2email_row
 
-        try:
-            for i, player in enumrate(players):
+    try:
+        for i, player in enumrate(players):
+            while True:
                 email = user_input_email(player)
                 existing_player = is_player_registered(email)
 
@@ -68,8 +69,8 @@ def existing_acc(players):
             time.sleep(2)
             play_game_message(player1name, player2name)
 
-        except TypeError:
-            return None
+    except TypeError:
+        return None
 
 
 def user_input_email(playername: str) -> str:
@@ -78,7 +79,7 @@ def user_input_email(playername: str) -> str:
     @param playername(string): Player's number
     """
     while True:
-        email input(f"{playername} - What is your email address?\n").strip()
+        email = input(f"{playername} - What is your email address?\n").strip()
 
         if validate_user_input(email):
             break
