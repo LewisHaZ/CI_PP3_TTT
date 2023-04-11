@@ -230,7 +230,7 @@ def create_new_players(player_number: str) -> list:
     email_column = WORKSHEET.col_values(2)
 
     while True:
-        player = input(f"{player_number} - what would you like to be called?\n")
+        player = input(f"{player_number} - what would u like to be called?\n")
         print(" ")
 
         if validate_username(player):
