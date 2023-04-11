@@ -20,3 +20,50 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 # Values for my Google sheets database
 SHEET = GSPREAD_CLIENT.open('ttt_database')
 WORKSHEET = SHEET.worksheet("Players")
+
+player = ["Player1", "Player2"]
+
+def existing_acc(players):
+    """
+    This function takes the existing email addresses from the spreadsheet
+    and welcomes them back, other content stored in the spreadsheet is the
+    score achieved and name of the user.
+    """
+    print(Col.BLUE + "Greetings user. " + 
+        "Please enter your login details.")
+
+        global player1name
+        global player2name
+        global player1score
+        global player2score
+        global player1email_row
+        global player2email_row
+
+        try:
+            for i, player in enumrate(players):
+                email = get_email(player)
+                existing_player = is_player_registered(email)
+
+                if existing_player:
+                    if i == 0:
+                        player1email_row = WORKSHEET.find(email).row
+                        player1name = \
+                            WORKSHEET.row_values(player1email_row)[0]
+                        player1score = \
+                            int(WORKSHEET.row_values(player1email_row)[2])
+                        
+                        print(Col.RED + f"\nHello {player1name}!\n")
+                    elif i == 1:
+                        player2email_row = WORKSHEET.find(email).row
+                        player2name = \
+                            WORKSHEET.row_values(player2email_row)[0]
+                        player2score = \
+                            int(WORKSHEET.row_values(player2email_row)[2])
+                        print(Col.YELLOW + f"\nHello {player2name}!\n")
+                    break
+
+                else:
+                    input_correct_email(player)
+                
+            time.sleep(2)
+            start_game_message(player1name, player2name)
