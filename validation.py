@@ -245,4 +245,27 @@ def create_new_players(player_number: str) -> list:
             print(Col.RED + "Please try again.\n")
     
     return [player, player_email, 0]
-    
+
+
+def validate_username(player_name: str) -> bool:
+    """
+    A function to validate the username against a criteria of
+    2 - 12 characters and only using letters.
+    @param player_name(string): Player name inputted
+    """
+    try:
+        if len(player_name) < 2 or len(player_name) > 12:
+            print(Col.RED + "User name must be" + 
+            "2 - 12 letters long.")
+            print(Col.RED + "Please enter another name.\n")
+        
+        elif not player_name.isalpha():
+            print(Col.RED + "Player name must only contain letters." +
+                "Please enter another name.\n")
+
+        else:
+            return True
+
+        except TypeError:
+            return False
+            
