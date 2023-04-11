@@ -4,9 +4,7 @@
 # Something to handle the turns
 # Function to check for win or tie
 # Function to switch the turn from x to o
-import sys
 import time
-from time import sleep
 import os
 from colors import Color as Col
 import validation as val

@@ -21,7 +21,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ttt_database')
 WORKSHEET = SHEET.worksheet("Players")
 
-player = ["Player1", "Player2"]
+players = ["Player1", "Player2"]
 
 
 def existing_acc(players):
