@@ -177,7 +177,7 @@ def play_game():
 
     if WINNER == 'X' or WINNER == 'O':
         print(WINNER + " WON.")
-    elif WINNER == None:
+    elif WINNER is None:
         print("It's a tie.")
 
 
