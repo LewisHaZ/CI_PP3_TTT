@@ -3,7 +3,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from email_validator import validate_email, EmailNotValidError
 from colors import Color as Col
-from run import start_game, cls, separate_line
+from run import play_game, cls, separate_line
 
 # Scope and constant vars defined as in love_sandwiches walk-through project
 # by Code Institute
@@ -66,7 +66,7 @@ def existing_acc(players):
                     input_correct_email(player)
                 
             time.sleep(2)
-            start_game_message(player1name, player2name)
+            play_game_message(player1name, player2name)
 
         except TypeError:
             return None
@@ -209,7 +209,7 @@ def register_new_players(players):
                     "your details have been added and registered.\n")
             
             time.sleep(2)
-            start_game_message(player1name, player2name)
+            play_game_message(player1name, player2name)
             separate_line()
         
         except TypeError:
@@ -279,7 +279,7 @@ def update_players_worksheet(data: list):
     WORKSHEET.append_row(data)
 
 
-def start_game_message(player1name: str, player2name: str):
+def play_game_message(player1name: str, player2name: str):
     """
     A function to give a message before the game
     begins, this is once the player's have logged in.
@@ -294,4 +294,4 @@ def start_game_message(player1name: str, player2name: str):
     separate_line()
     time.sleep(2)
     cls()
-    start_game()
+    play_game()
