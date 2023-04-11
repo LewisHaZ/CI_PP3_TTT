@@ -215,3 +215,34 @@ def register_new_players(players):
         except TypeError:
             return None
 
+
+def create_new_players(player_number: str) -> list:
+    """
+    A function to create a new player, this gets
+    the player's inputted name and email and checks 
+    if it is already in the database.
+    @param player_number(string): number of the player
+    """
+
+    email_column = WORKSHEET.col_values(2)
+
+    while True:
+        player = input(f"{player_number} - what would you like to be called?\n")
+        print(" ")
+
+        if validate_username(player):
+            break
+    
+    while True:
+        player_email = user_input_email(player)
+    
+        if player_email not in email_column:
+            print(Col.YELLOW + "\nThank you.\n")
+            break
+
+        else:
+            print(Col.RED + f"\nSorry {player} , this email is already in use.")
+            print(Col.RED + "Please try again.\n")
+    
+    return [player, player_email, 0]
+    
