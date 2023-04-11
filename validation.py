@@ -61,14 +61,15 @@ def existing_acc(players):
                             WORKSHEET.row_values(player2email_row)[0]
                         player2score = \
                             int(WORKSHEET.row_values(player2email_row)[2])
+
                         print(Col.YELLOW + f"\nHello {player2name}!\n")
                     break
 
                 else:
                     input_correct_email(player)
                 
-            time.sleep(2)
-            play_game_message(player1name, player2name)
+        time.sleep(2)
+        play_game_message(player1name, player2name)
 
     except TypeError:
         return None
