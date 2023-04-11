@@ -133,3 +133,21 @@ def input_correct_email(player: str):
         register_account(player)
 
 
+def email_not_registered() -> str:
+    """
+    A function to give the option to enter another email or
+    to create a new email and user.
+    """
+    time.sleep(1)
+    print(Col.BLUE + "Do you want to:")
+    options = "1. Try another email\n2. Create a new user\n"
+    selected_option = input(options)
+    separate_line()
+
+    while selected_option not in ("1", "2"):
+        print("Please choose from 1 or 2")
+        selected_option = input(options)
+
+        separate_line()
+    
+    return selected_option
