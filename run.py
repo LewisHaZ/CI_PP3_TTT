@@ -73,12 +73,12 @@ def main_menu() -> str:
         menu_option_selected = input(menu_options)
         separate_line()
     
-    if menu_option_selected == "1"
+    if menu_option_selected == "1":
         cls()
         logo()
         rules()
     
-    elif menu_option_selected == "2"
+    elif menu_option_selected == "2":
         play_game()
     
     return menu_option_selected
