@@ -16,3 +16,7 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+
+# Values for my Google sheets database
+SHEET = GSPREAD_CLIENT.open('ttt_database')
+WORKSHEET = SHEET.worksheet("Players")
