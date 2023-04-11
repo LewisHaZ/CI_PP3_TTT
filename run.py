@@ -108,32 +108,33 @@ def rules():
     cls()
     main()
 
-    def start_game() -> str:
-        """
-        The function checks to see if it's the players first time
-        """
-        time.sleep(1)
-        print(Col.YELLOW + "Is this your first time playing?")
-        answer = "1. Yes\n 2. No\n"
-        answered = input(answer)
-        separate_line()
+
+def start_game() -> str:
+    """
+    The function checks to see if it's the players first time
+    """
+    time.sleep(1)
+    print(Col.YELLOW + "Is this your first time playing?")
+    answer = "1. Yes\n 2. No\n"
+    answered = input(answer)
+    separate_line()
 
         # Validate if answered with 1 or 2
-        while answered not in ("1", "y", "2", "n"):
-            print(Col.RED + "Please select from 1 or 2: ")
-            answered = input(answer)
+    while answered not in ("1", "y", "2", "n"):
+        print(Col.RED + "Please select from 1 or 2: ")
+        answered = input(answer)
 
-            separate_line()
+        separate_line()
         
-        if answered == "1" or answered == "y":
-            cls()
-            logo()
+    if answered == "1" or answered == "y":
+        cls()
+        logo()
         
-        elif answered == "2" or answered == "n":
-            cls()
-            logo()
+    elif answered == "2" or answered == "n":
+        cls()
+        logo()
         
-        return answered
+    return answered
 
 
 # Game board

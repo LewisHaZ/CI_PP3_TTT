@@ -23,6 +23,7 @@ WORKSHEET = SHEET.worksheet("Players")
 
 player = ["Player1", "Player2"]
 
+
 def existing_acc(players):
     """
     This function takes the existing email addresses from the spreadsheet
@@ -40,7 +41,7 @@ def existing_acc(players):
     global player2email_row
 
     try:
-        for i, player in enumrate(players):
+        for i, player in enumerate(players):
             while True:
                 email = user_input_email(player)
                 existing_player = is_player_registered(email)
@@ -119,8 +120,8 @@ def is_player_registered(email: str) -> bool:
 
 def input_correct_email(player: str):
     """
-    A function to notify the player they have not 
-    typed a valid registered email address and 
+    A function to notify the player they have not
+    typed a valid registered email address and
     nothing was found in the database.
     @param player(sting): number of current player
     """
@@ -131,7 +132,7 @@ def input_correct_email(player: str):
         print("Please type the email address again:")
     
     elif selected_option == "2":
-        register_account(player)
+        register_single_player(player)
 
 
 def email_not_registered() -> str:
@@ -168,11 +169,12 @@ def register_single_player(player_number: str):
     player_info = create_new_players(new_player)
     update_players_worksheet(player_info)
 
+
 def register_new_players(players):
     """
-    A function to register a new player, asks for 
+    A function to register a new player, asks for
     an input in terms of name. Saved to a variable,
-    it will be displayed in game to indicate the 
+    it will be displayed in game to indicate the
     players' turn.
     """
 
@@ -295,4 +297,4 @@ def play_game_message(player1name: str, player2name: str):
     separate_line()
     time.sleep(2)
     cls()
-    start_game()
+    play_game()
