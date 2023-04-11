@@ -41,7 +41,7 @@ def existing_acc(players):
 
         try:
             for i, player in enumrate(players):
-                email = get_email(player)
+                email = user_input_email(player)
                 existing_player = is_player_registered(email)
 
                 if existing_player:
@@ -70,3 +70,34 @@ def existing_acc(players):
 
         except TypeError:
             return None
+
+
+def user_input_email(playername: str) -> str:
+    """
+    A function that asks for user to input their email
+    @param playername(string): Player's number
+    """
+    while True:
+        email input(f"{playername} - What is your email address?\n").strip()
+
+        if validate_user_input(email):
+            break
+
+    return email
+
+
+def validate_user_input(email: str):
+    """
+    A function to validate the user's email address
+    against the database and the correct name convention.
+    eg. Player1@example.com
+    @param email(string): Player's email address.
+    """
+    try:
+        validate_email(email)
+        return True
+    
+    except EmailNotValidError as e:
+        print(Col.RED + "\n" + str(e))
+        print(Col.RED + "Please type your email again.\n")
+    
