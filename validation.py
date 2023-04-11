@@ -277,4 +277,21 @@ def update_players_worksheet(data: list):
     @param data(list): Player's name and email values
     """
     WORKSHEET.append_row(data)
-    
+
+
+def start_game_message(player1name: str, player2name: str):
+    """
+    A function to give a message before the game
+    begins, this is once the player's have logged in.
+    @param player1(string): Player1's name
+    @param player2(string): Player2's name
+    """
+    separate_line()
+    print(Col.BLUE + "Ready?")
+    print(Col.RED + f"{player1name}" + Col.YELLOW +
+            " & " + Col.BLUE + f"{player2name}")
+    print(Col.BLUE + "Let's play...")
+    separate_line()
+    time.sleep(2)
+    cls()
+    start_game()
