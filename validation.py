@@ -151,3 +151,20 @@ def email_not_registered() -> str:
         separate_line()
     
     return selected_option
+
+
+def register_single_player(player_number: str):
+    """
+    A function to register one player.
+    @param player_number(string): number of player
+    """
+
+    time.sleep(1)
+    print(Col.YELLOW + "Creating a new account for you...")
+    print("")
+    print("")
+    new_player = player_number
+    player_info = create_new_players(new_player)
+    update_players_worksheet(player_info)
+
+
