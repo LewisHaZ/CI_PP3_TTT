@@ -268,4 +268,13 @@ def validate_username(player_name: str) -> bool:
 
         except TypeError:
             return False
-            
+
+
+def update_players_worksheet(data: list):
+    """
+    A function to update the worksheet in Google Sheets
+    with the new rows of data provided by users.
+    @param data(list): Player's name and email values
+    """
+    WORKSHEET.append_row(data)
+    
