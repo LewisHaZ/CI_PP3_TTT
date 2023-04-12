@@ -113,6 +113,7 @@ def start_game() -> str:
     """
     The function checks to see if it's the players first time
     """
+    separate_line()
     time.sleep(1)
     print(Col.YELLOW + "Is this your first time playing?")
     answer = "1. Yes\n 2. No\n"
