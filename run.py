@@ -5,6 +5,7 @@
 # Function to check for win or tie
 # Function to switch the turn from x to o
 import sys
+import random
 import time
 import os
 from colors import Color as Col
