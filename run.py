@@ -152,7 +152,7 @@ class Board():
         self.board = [[' ' for x in range(BOARD_WIDTH)]
                         for y in range(BOARD_HEIGHT)]
         self.moves = random.randint(0, 1) # Random player starts the game
-        self.last_move =  [-1, -1]
+        self.last_move = [-1, -1]
 
     def display_board(self):
         """
@@ -170,7 +170,7 @@ class Board():
 
         #Displays number of columns
         for row in range(BOARD_WIDTH):
-            print(Col.BLUE + f"     {row1}   ", end="")
+            print(Col.BLUE + f"     {row+1}   ", end="")
         print("\n")
     
     def whos_move(self) -> str:
@@ -180,191 +180,167 @@ class Board():
         pieces = ['X', 'O']
         return pieces[self.moves % 2]
     
+    def winning_move(self) -> bool:
+        """
+        Checking if any of the rows have the same
+        value BUT not the initial dash placeholder.
+        If the condition is met then it ends the
+        game.
+        """
+        last_row = self.last_move[0]
+        last_col = self.last_move[1]
+        last_move = self.board[last_row][last_col] # X or O
+
+        def row_win() -> bool:
+            for row in range(0, BOARD_HEIGHT):
+                for col in range(0, (BOARD_WIDTH)):
+                    if (last_move == self.board[row][col] and
+                        last_move == self.board[row][col+2]):
+                        return True
+            return False
+
+        def column_win() -> bool:
+            for row in range(0, (BOARD_HEIGHT)):
+                for col in range(0, BOARD_WIDTH):
+                    if (last_move == self.board[row][col] and
+                        last_move == self.board[row+2][col]):
+                        return True
+            return False
+
+        def diagonal_win() -> bool:
+            for row in range(3, BOARD_HEIGHT):
+                for col in range(0, (BOARD_WIDTH)):
+                    if (last_move == self.board[row][col] and
+                        last_move == self.board[row-1][col+1]):
+                        return True
+            
+            for row in range(0, BOARD_HEIGHT):
+                for col in range(0, (BOARD_WIDTH)):
+                    if (last_move == self.board[row][col] and
+                        last_move == self.board[row+1][col+1]):
+                        return True
+
+            return False
+
+        
+        if row_win() or column_win() or diagonal_win():
+            cls()
+            self.display_board()
+            if last_move == Col.RED + 'X':
+                print(Col.BLUE + "\n----> " +
+                       f"{val.player1name.upper()}" + " is the winner <----\n")
+                val.player1score += 1
+                val.WORKSHEET.update_cell(val.player1email_row, 3, +
+                                          val.player1score)
+            
+            else:
+                print(Col.BLUE + "\n---->  " +
+                       f"{val.player2name.upper()}" + " is the winner <----\n")
+                val.player2score += 1
+                val.WORKSHEET.update_cell(val.player2email_row, 3, +
+                                            val.player2score)
+            
+            time.sleep(2)
+            separate_line()
+            play_again()
+        
+        return False
 
 
-def display_board():
+def run_game():
     """
-    A function to print the lines for
-    the game board.
+    A function to start the game once both players have
+    signed up, and validated everything
     """
-    print(board[0] + " | " + board[1] + " | " + board[2])
-    print(board[3] + " | " + board[4] + " | " + board[5])
-    print(board[6] + " | " + board[7] + " | " + board[8])
+    game = Board()
 
+    game_won = False
 
-def play_game():
+    while not game_won:
+        cls()
+        game.display_board()
+
+        is_move_valid = False
+
+        while not is_move_valid:
+            if game.whos_move() == "X":
+                print(f"{val.player1name}'s move. " +
+                       "You play with " +  Col.RED + "X")
+                player_move = input(f"Choose a free space between 1 - 9:\n")
+            
+            else:
+                print(f"{val.player2name}'s move." +
+                        "You play with " + Col.BLUE + "O")
+                player_move = input(f"Choose a free space between 1 and 9:\n")
+            
+            try:
+                if(int(player_move) > 0):
+                    is_move_valid = game.move(int(player_move)-1)
+                else:
+                    print(Col.RED + "Incorrect input, please try again\n")
+            except:
+                print(Col.RED + f"Please choose a free space between 1 and 9.\n")
+        
+        game_won = game.winning_move()
+
+        if game.moves == BOARD_HEIGHT * BOARD_WIDTH:
+            cls()
+            game.display_board()
+            print(Col.BLUE + "\n----> The game is over - it's a tie! <----\n")
+
+            time.sleep(2)
+            separate_line()
+            play_again()
+
+def play_again():
     """
-    Runs through the logic for the game,
-    displays the board and allows the game
-    to start and finish.
+    Give players an option to carry on playing with same players names
+    go back to the main menu or exit the game
     """
-    display_board()
-    while GAME_ACTIVE:
+    print(Col.GREEN + "What would you like to do:")
+    options = "1) Play again\n2) Go to main menu\n\
+3) See your statistics\n4) Quit game\n"
+    selected = input(options)
+    separate_line()
 
-        handle_turn(CURRENT_PLAYER)
+    # Validate if answer is either 1 or 2 or 3
+    while selected not in ("1", "2", "3", "4"):
+        print(Col.GREEN + "Please choose between one of below options:")
+        selected = input(options)
 
-        check_game_over()
+        separate_line()
 
-        switch_player()
+    if selected == "1":
+        print(Col.BLUE + "Starting a new game for " +
+              f"{val.player1name} & {val.player2name}!\n")
+        time.sleep(2)
+        run_game()
 
-    if WINNER == 'X' or WINNER == 'O':
-        print(WINNER + " WON.")
-    elif WINNER is None:
-        print("It's a tie.")
+    elif selected == "2":
+        time.sleep(1)
+        cls()
+        main()
+
+    elif selected == "3":
+        show_stats()
+        time.sleep(1)
+        play_again()
+
+    elif selected == "4":
+        print(Col.BLUE + "Thanks for playing! See you soon!\n")
+        sys.exit()
 
 
-def handle_turn(player):
+def show_stats():
     """
-    A function to deal with the game
-    delegating each player their turn
-    and switching between.
+    Display number of games won so far by each player
+    who played in the last game
     """
-    print(player + "'s turn.")
-    position = input("Choose a position from 1-9: ")
-
-    valid = False
-
-    while not valid:
-
-        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-            position = input("Choose a position from 1-9: ")
-
-        position = int(position) - 1
-
-        if board[position] == "-":
-            valid = True
-        else:
-            print("That space is already filled, go again.")
-
-    board[position] = player
-    display_board()
-
-
-def check_game_over():
-    """
-    A function to check if the game
-    has finished and what the condition
-    is for the game over state win or tie.
-    """
-    check_if_win()
-    check_if_tie()
-
-
-def check_if_win():
-    """
-    A function to check if a player has won
-    the game: this will check rows, columns
-    and diagonals for a win game state.
-    """
-    global WINNER
-    row_wins = check_rows()
-    col_wins = check_columns()
-    diag_wins = check_diagonals()
-    if row_wins:
-        WINNER = row_wins
-    elif col_wins:
-        WINNER = col_wins
-    elif diag_wins:
-        WINNER = diag_wins
-    else:
-        WINNER = None
-
-    return
-
-
-def check_rows():
-    """
-    Checking if any of the rows have the same
-    value BUT not the initial dash placeholder.
-    If the condition is met then it ends the
-    game.
-    """
-    global GAME_ACTIVE
-    row_1 = board[0] == board[1] == board[2] != "-"
-    row_2 = board[3] == board[4] == board[5] != "-"
-    row_3 = board[6] == board[7] == board[8] != "-"
-    if row_1 or row_2 or row_3:
-        GAME_ACTIVE = False
-    if row_1:
-        return board[0]
-    elif row_2:
-        return board[3]
-    elif row_3:
-        return board[6]
-    return
-
-
-def check_columns():
-    """
-    Checking if any of the columns have the same
-    value BUT not the initial dash placeholder.
-    If the condition is met then it ends the 
-    game.
-    """
-    global GAME_ACTIVE
-    col_1 = board[0] == board[3] == board[6] != "-"
-    col_2 = board[1] == board[4] == board[7] != "-"
-    col_3 = board[2] == board[5] == board[8] != "-"
-    if col_1 or col_2 or col_3:
-        GAME_ACTIVE = False
-    if col_1:
-        return board[0]
-    elif col_2:
-        return board[1]
-    elif col_3:
-        return board[2]
-    return
-
-
-def check_diagonals():
-    """
-    Checking if any of the diagonals have the same
-    value BUT not the initial dash placeholder.
-    If the condition is met then it ends the 
-    game.
-    """
-    global GAME_ACTIVE
-    diag_1 = board[0] == board[4] == board[8] != "-"
-    diag_2 = board[6] == board[4] == board[2] != "-"
-  
-    if diag_1 or diag_2:
-        GAME_ACTIVE = False
-    if diag_1:
-        return board[0]
-    elif diag_2:
-        return board[6]
-    return
-
-
-def check_if_tie():
-    """
-    A function to check if a player has tied
-    the game: this will check rows, columns 
-    and diagonals for the - symbol, if there
-    is no - then the game is a tie.
-    """
-    global GAME_ACTIVE
-    if "-" not in board:
-        GAME_ACTIVE = False
-    return
-
-
-def switch_player():
-    """
-    A function to switch from x's turn
-    to o's turn and this repeats until
-    a game state has been reached
-    """
-    global CURRENT_PLAYER
-    if CURRENT_PLAYER == "X":
-        CURRENT_PLAYER = "O"
-    elif CURRENT_PLAYER == "O":
-        CURRENT_PLAYER = "X"
-
-    return
-
-
-play_game()
+    print(Col.BLUE + "Total number of games won by " +
+          f"{val.player1name}: {val.player1score}")
+    print(Col.BLUE + "Total number of games won by " +
+          f"{val.player2name}: {val.player2score}")
+    separate_line()
 
 
 def main():
@@ -372,8 +348,7 @@ def main():
     Run all program functions
     """
     logo()
-    start_game()
-
+    main_menu()
 
 if __name__ == "__main__":
     main()
