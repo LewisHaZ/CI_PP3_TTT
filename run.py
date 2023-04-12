@@ -146,6 +146,10 @@ def start_game() -> str:
 BOARD_WIDTH = 3
 BOARD_HEIGHT = 3
 
+board = ["-", "-", "-",
+         "-", "-", "-",
+         "-", "-", "-",]
+
 
 class Board():
     def __init__(self):
@@ -160,19 +164,10 @@ class Board():
         Dimensions declared in a variable
         """
         print(" ")
-        for row in range(0, BOARD_HEIGHT):
-            print(Col.BLUE + '|', end="")
-            for col in range(0, BOARD_WIDTH):
-                print(f"    {self.board[row][col]}" + Col.BLUE + "  |", end="")
-            print("\n")
+        print(board[0] + " | " + board[1] + " | " + board[2])
+        print(board[3] + " | " + board[4] + " | " + board[5])
+        print(board[6] + " | " + board[7] + " | " + board[8])
         
-        print(Col.BLUE + " -"*12)
-
-        #Displays number of columns
-        for row in range(BOARD_WIDTH):
-            print(Col.BLUE + f"     {row+1}   ", end="")
-        print("\n")
-    
     def whos_move(self) -> str:
         """
         Alternate between player's 1 and 2
@@ -292,6 +287,7 @@ def run_game():
             separate_line()
             play_again()
 
+
 def play_again():
     """
     Give players an option to carry on playing with same players names
@@ -349,6 +345,7 @@ def main():
     """
     logo()
     main_menu()
+
 
 if __name__ == "__main__":
     main()
