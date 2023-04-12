@@ -298,4 +298,4 @@ def play_game_message(player1name: str, player2name: str):
     separate_line()
     time.sleep(2)
     cls()
-    play_game()
+    run_game()
