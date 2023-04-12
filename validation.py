@@ -3,7 +3,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from email_validator import validate_email, EmailNotValidError
 from colors import Color as Col
-from run import play_game, cls, separate_line
+from run import run_game, cls, separate_line
 
 # Scope and constant vars defined as in love_sandwiches walk-through project
 # by Code Institute
