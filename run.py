@@ -99,7 +99,9 @@ def rules():
     print(Col.BLUE + "Tic Tac Toe is simple game of " +
                      "strategy and forward thinking.")
     time.sleep(1.5)
+    print(" ")
     print(Col.YELLOW + "So good luck and have fun!")
+    print(" ")
     time.sleep(1)
     separate_line()
     input("Enter any key to exit...\n")
