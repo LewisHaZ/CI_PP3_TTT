@@ -4,6 +4,7 @@
 # Something to handle the turns
 # Function to check for win or tie
 # Function to switch the turn from x to o
+import sys
 import time
 import os
 from colors import Color as Col
@@ -34,6 +35,7 @@ def logo():
     print(" ")
     print(" ")
     print(Col.YELLOW + "                    a 2 player game.")
+    separate_line()
     time.sleep(1)
 
 
@@ -113,8 +115,8 @@ def start_game() -> str:
     """
     The function checks to see if it's the players first time
     """
-    separate_line()
     time.sleep(1)
+    separate_line()
     print(Col.YELLOW + "Is this your first time playing?")
     answer = "1. Yes\n 2. No\n"
     answered = input(answer)
@@ -140,18 +142,43 @@ def start_game() -> str:
     return answered
 
 
-# Game board
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-",]
-# Is the Game running?
-GAME_ACTIVE = True
+BOARD_WIDTH = 3
+BOARD_HEIGHT = 3
 
-# Who won? Or is it a tie?
-WINNER = None
 
-# Whose turn is it?
-CURRENT_PLAYER = 'X'
+class Board():
+    def __init__(self):
+        self.board = [[' ' for x in range(BOARD_WIDTH)]
+                        for y in range(BOARD_HEIGHT)]
+        self.moves = random.randint(0, 1) # Random player starts the game
+        self.last_move =  [-1, -1]
+
+    def display_board(self):
+        """
+        Displays the game board of 3 columns and 3 rows.
+        Dimensions declared in a variable
+        """
+        print(" ")
+        for row in range(0, BOARD_HEIGHT):
+            print(Col.BLUE + '|', end="")
+            for col in range(0, BOARD_WIDTH):
+                print(f"    {self.board[row][col]}" + Col.BLUE + "  |", end="")
+            print("\n")
+        
+        print(Col.BLUE + " -"*12)
+
+        #Displays number of columns
+        for row in range(BOARD_WIDTH):
+            print(Col.BLUE + f"     {row1}   ", end="")
+        print("\n")
+    
+    def whos_move(self) -> str:
+        """
+        Alternate between player's 1 and 2
+        """
+        pieces = ['X', 'O']
+        return pieces[self.moves % 2]
+    
 
 
 def display_board():
