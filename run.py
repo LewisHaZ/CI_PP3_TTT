@@ -79,7 +79,7 @@ def main_menu() -> str:
         rules()
 
     elif menu_option_selected == "2":
-        play_game()
+        start_game()
 
     return menu_option_selected
 
