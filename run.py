@@ -210,147 +210,183 @@ class Board():
         board[position] = player
         display_board()
     
-    def check_game_over():
-        """
-        A function to check if the game
-        has finished and what the condition
-        is for the game over state win or tie.
-        """
-        check_if_win()
-        check_if_tie()
-    
-    def check_if_win():
-        """
-        A function to check if a player has won
-        the game: this will check rows, columns
-        and diagonals for a win game state.
-        """
-        global WINNER
-        row_wins = check_rows()
-        col_wins = check_columns()
-        diag_wins = check_diagonals()
-        if row_wins:
-            WINNER = row_wins
-        elif col_wins:
-            WINNER = col_wins
-        elif diag_wins:
-            WINNER = diag_wins
-        else:
-            WINNER = None
 
-        return
-        check_win()
-    
-    def check_rows():
-        """
-        Checking if any of the rows have the same
-        value BUT not the initial dash placeholder.
-        If the condition is met then it ends the
-        game.
-        """
-        global GAME_ACTIVE
-        row_1 = board[0] == board[1] == board[2] != "-"
-        row_2 = board[3] == board[4] == board[5] != "-"
-        row_3 = board[6] == board[7] == board[8] != "-"
-        if row_1 or row_2 or row_3:
-            GAME_ACTIVE = False
-        if row_1:
-            return board[0]
-        elif row_2:
-            return board[3]
-        elif row_3:
-            return board[6]
-        return
-    
-    def check_columns():
-        """
-        Checking if any of the columns have the same
-        value BUT not the initial dash placeholder.
-        If the condition is met then it ends the 
-        game.
-        """
-        global GAME_ACTIVE
-        col_1 = board[0] == board[3] == board[6] != "-"
-        col_2 = board[1] == board[4] == board[7] != "-"
-        col_3 = board[2] == board[5] == board[8] != "-"
-        if col_1 or col_2 or col_3:
-            GAME_ACTIVE = False
-        if col_1:
-            return board[0]
-        elif col_2:
-            return board[1]
-        elif col_3:
-            return board[2]
-        return
+def check_rows():
+    """
+    Checking if any of the rows have the same
+    value BUT not the initial dash placeholder.
+    If the condition is met then it ends the
+    game.
+    """
+    global GAME_ACTIVE
+    row_1 = board[0] == board[1] == board[2] != "-"
+    row_2 = board[3] == board[4] == board[5] != "-"
+    row_3 = board[6] == board[7] == board[8] != "-"
+    if row_1 or row_2 or row_3:
+        GAME_ACTIVE = False
+    if row_1:
+        return board[0]
+    elif row_2:
+        return board[3]
+    elif row_3:
+        return board[6]
+    return
 
-    def check_diagonals():
-        """
-        Checking if any of the diagonals have the same
-        value BUT not the initial dash placeholder.
-        If the condition is met then it ends the 
-        game.
-        """
-        global GAME_ACTIVE
-        diag_1 = board[0] == board[4] == board[8] != "-"
-        diag_2 = board[6] == board[4] == board[2] != "-"
-    
-        if diag_1 or diag_2:
-            GAME_ACTIVE = False
-        if diag_1:
-            return board[0]
-        elif diag_2:
-            return board[6]
-        return
+def check_columns():
+    """
+    Checking if any of the columns have the same
+    value BUT not the initial dash placeholder.
+    If the condition is met then it ends the 
+    game.
+    """
+    global GAME_ACTIVE
+    col_1 = board[0] == board[3] == board[6] != "-"
+    col_2 = board[1] == board[4] == board[7] != "-"
+    col_3 = board[2] == board[5] == board[8] != "-"
+    if col_1 or col_2 or col_3:
+        GAME_ACTIVE = False
+    if col_1:
+        return board[0]
+    elif col_2:
+        return board[1]
+    elif col_3:
+        return board[2]
+    return
 
-    def check_if_tie():
-        """
-        A function to check if a player has tied
-        the game: this will check rows, columns 
-        and diagonals for the - symbol, if there
-        is no - then the game is a tie.
-        """
-        global GAME_ACTIVE
-        if "-" not in board:
-            GAME_ACTIVE = False
-        return
-    
-    def switch_player():
-        """
-        A function to switch from x's turn
-        to o's turn and this repeats until
-        a game state has been reached
-        """
-        global CURRENT_PLAYER
-        if CURRENT_PLAYER == "X":
-            CURRENT_PLAYER = "O"
-        elif CURRENT_PLAYER == "O":
-            CURRENT_PLAYER = "X"
+def check_diagonals():
+    """
+    Checking if any of the diagonals have the same
+    value BUT not the initial dash placeholder.
+    If the condition is met then it ends the 
+    game.
+    """
+    global GAME_ACTIVE
+    diag_1 = board[0] == board[4] == board[8] != "-"
+    diag_2 = board[6] == board[4] == board[2] != "-"
 
-        return
+    if diag_1 or diag_2:
+        GAME_ACTIVE = False
+    if diag_1:
+        return board[0]
+    elif diag_2:
+        return board[6]
+    return
+     
 
-    def check_win():
-        if row_wins or column_wins or diagonal_wins:
-            cls()
-            display_board()
-            if WINNER == Col.RED + 'X':
-                print(Col.BLUE + "\n----> " +
-                       f"{val.player1name.upper()}" + " is the winner <----\n")
-                val.player1score += 1
-                val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                          val.player1score)
-            
-            else:
-                print(Col.BLUE + "\n---->  " +
-                       f"{val.player2name.upper()}" + " is the winner <----\n")
-                val.player2score += 1
-                val.WORKSHEET.update_cell(val.player2email_row, 3, +
-                                            val.player2score)
-            
-            time.sleep(2)
-            separate_line()
-            play_again()
+def check_if_win():
+    """
+    A function to check if a player has won
+    the game: this will check rows, columns
+    and diagonals for a win game state.
+    """
+    global WINNER
+    row_wins = check_rows()
+    col_wins = check_columns()
+    diag_wins = check_diagonals()
+    if row_wins:
+        WINNER = row_wins
+    elif col_wins:
+        WINNER = col_wins
+    elif diag_wins:
+        WINNER = diag_wins
+    else:
+        WINNER = None
+
+    return
+    check_win()
+
+
+def check_if_tie():
+    """
+    A function to check if a player has tied
+    the game: this will check rows, columns 
+    and diagonals for the - symbol, if there
+    is no - then the game is a tie.
+    """
+    global GAME_ACTIVE
+    if "-" not in board:
+        GAME_ACTIVE = False
+    return
+
+
+def check_win():
+    row_wins = check_rows()
+    column_wins = check_columns()
+    diagonal_wins = check_diagonals()
+    if row_wins or column_wins or diagonal_wins:
+        cls()
+        display_board()
+        if WINNER == Col.RED + 'X':
+            print(Col.BLUE + "\n----> " +
+                f"{val.player1name.upper()}" + " is the winner <----\n")
+            val.player1score += 1
+            val.WORKSHEET.update_cell(val.player1email_row, 3, +
+                                    val.player1score)
         
-        return False
+        else:
+            print(Col.BLUE + "\n---->  " +
+                f"{val.player2name.upper()}" + " is the winner <----\n")
+            val.player2score += 1
+            val.WORKSHEET.update_cell(val.player2email_row, 3, +
+                                        val.player2score)
+        
+        time.sleep(2)
+        separate_line()
+        play_again()
+    
+    return False   
+
+
+def handle_turn(player):
+    """
+    A function to deal with the game
+    delegating each player their turn
+    and switching between.
+    """
+    print(player + "'s turn.")
+    position = input("Choose a position from 1-9: ")
+
+    valid = False
+
+    while not valid:
+
+        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input("Choose a position from 1-9: ")
+
+        position = int(position) - 1
+
+        if board[position] == "-":
+            valid = True
+        else:
+            print("That space is already filled, go again.")
+
+    board[position] = player
+    display_board()
+
+
+def switch_player():
+    """
+    A function to switch from x's turn
+    to o's turn and this repeats until
+    a game state has been reached
+    """
+    global CURRENT_PLAYER
+    if CURRENT_PLAYER == "X":
+        CURRENT_PLAYER = "O"
+    elif CURRENT_PLAYER == "O":
+        CURRENT_PLAYER = "X"
+
+    return
+
+
+def check_game_over():
+    """
+    A function to check if the game
+    has finished and what the condition
+    is for the game over state win or tie.
+    """
+    check_if_win()
+    check_if_tie()
 
 
 def run_game():
