@@ -282,34 +282,6 @@ def check_if_tie():
     return
 
 
-def check_win():
-    row_wins = check_rows()
-    column_wins = check_columns()
-    diagonal_wins = check_diagonals()
-    if row_wins or column_wins or diagonal_wins:
-        cls()
-        display_board()
-        if WINNER == Col.RED + 'X':
-            print(Col.BLUE + "\n----> " +
-                f"{val.player1name.upper()}" + " is the winner <----\n")
-            val.player1score += 1
-            val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                    val.player1score)
-        
-        else:
-            print(Col.BLUE + "\n---->  " +
-                f"{val.player2name.upper()}" + " is the winner <----\n")
-            val.player2score += 1
-            val.WORKSHEET.update_cell(val.player2email_row, 3, +
-                                        val.player2score)
-        
-        time.sleep(2)
-        separate_line()
-        play_again()
-    
-    return False
-
-
 def handle_turn(player):
     """
     A function to deal with the game
@@ -377,20 +349,26 @@ def run_game():
 
         switch_player()
 
-    if WINNER == Col.RED + 'X':
-        print(Col.BLUE + "\n----> " +
-            f"{val.player1name.upper()}" + " is the winner <----\n")
-        val.player1score += 1
-        val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                 val.player1score) 
-    elif WINNER == 'O':
-        print(Col.BLUE + "\n---->  " +
-            f"{val.player2name.upper()}" + " is the winner <----\n")
-        val.player2score += 1
-        val.WORKSHEET.update_cell(val.player2email_row, 3, +
-                                 val.player2score)
-    elif WINNER is None:
-        print("It's a tie.")
+    row_wins = check_rows()
+    column_wins = check_columns()
+    diagonal_wins = check_diagonals()
+
+    if row_wins or column_wins or diagonal_wins:
+        cls()
+        if WINNER == Col.RED + 'X':
+            print(Col.BLUE + "\n----> " +
+                f"{val.player1name.upper()}" + " is the winner <----\n")
+            val.player1score += 1
+            val.WORKSHEET.update_cell(val.player1email_row, 3, +
+                                    val.player1score) 
+        else:
+            print(Col.BLUE + "\n---->  " +
+                f"{val.player2name.upper()}" + " is the winner <----\n")
+            val.player2score += 1
+            val.WORKSHEET.update_cell(val.player2email_row, 3, +
+                                    val.player2score)
+        if WINNER is None:
+            print("It's a tie.")
     play_again()
 
 
