@@ -342,6 +342,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
+    display_board()
     while GAME_ACTIVE:
 
         handle_turn(CURRENT_PLAYER)
@@ -355,13 +356,12 @@ def run_game():
     diagonal_wins = check_diagonals()
 
     if row_wins or column_wins or diagonal_wins:
-        cls()
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
                 f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                    val.player1score) 
+                                    val.player1score)
         elif WINNER == Col.RED + 'O':
             print(Col.BLUE + "\n---->  " +
                 f"{val.player2name.upper()}" + " is the winner <----\n")
@@ -395,6 +395,7 @@ def play_again():
         print(Col.BLUE + "Starting a new game for " +
               f"{val.player1name} & {val.player2name}!\n")
         time.sleep(2)
+        cls()
         run_game()
 
     elif selected == "2":
