@@ -354,15 +354,16 @@ def run_game():
     row_wins = check_rows()
     column_wins = check_columns()
     diagonal_wins = check_diagonals()
-    
+
     if row_wins or column_wins or diagonal_wins:
+        cls()
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
                 f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
                                     val.player1score)
-        elif WINNER == Col.RED + 'O':
+        else:
             print(Col.BLUE + "\n---->  " +
                 f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
