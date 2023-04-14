@@ -160,52 +160,55 @@ CURRENT_PLAYER = 'X'
 GAME_ACTIVE = True
 
 
-class Board():
-    def __init__(self):
-        self.moves = random.randint(0, 1)  # Random player starts the game
 
-    def whos_move(self) -> str:
-        """
-        Alternate moves between player 1 and 2
-        """
-        pieces = ['X', 'O']
-        return pieces[self.moves % 2]
-        
-    def handle_turn(self, player, display_board):
-        """
-        A function to deal with the game
-        delegating each player their turn
-        and switching between.
-        """
-        print(player + "'s turn.")
-        position = input("Choose a position from 1-9: ")
+def __init__(self):
+    self.moves = random.randint(0, 1)  # Random player starts the game
 
-        valid = False
 
-        while not valid:
+def whos_move(self) -> str:
+    """
+    Alternate moves between player 1 and 2
+    """
+    pieces = ['X', 'O']
+    return pieces[self.moves % 2]
 
-            while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-                position = input("Choose a position from 1-9: ")
 
-            position = int(position) - 1
+def handle_turn(player):
+    """
+    A function to deal with the game
+    delegating each player their turn
+    and switching between.
+    """
+    print(player + "'s turn.")
+    position = input("Choose a position from 1-9: ")
 
-            if board[position] == "-":
-                valid = True
-            else:
-                print("That space is already filled, go again.")
+    valid = False
 
-        board[position] = player
-        display_board()
+    while not valid:
+
+        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input("Choose a position from 1-9: ")
+
+        position = int(position) - 1
+
+        if board[position] == "-":
+            valid = True
+        else:
+            print("That space is already filled, go again.")
+
+    board[position] = player
+    display_board()
     
-    def display_board(self):
-        """
-        Displays the game board of 3 columns and 3 rows.
-        Dimensions declared in a variable
-        """
-        print(" ")
-        print(board[0] + " | " + board[1] + " | " + board[2])
-        print(board[3] + " | " + board[4] + " | " + board[5])
-        print(board[6] + " | " + board[7] + " | " + board[8])
+    
+def display_board():
+    """
+    Displays the game board of 3 columns and 3 rows.
+     Dimensions declared in a variable
+    """
+    print(" ")
+    print(board[0] + " | " + board[1] + " | " + board[2])
+    print(board[3] + " | " + board[4] + " | " + board[5])
+    print(board[6] + " | " + board[7] + " | " + board[8])
         
 
 def check_rows():
