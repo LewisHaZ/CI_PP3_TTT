@@ -162,8 +162,6 @@ GAME_ACTIVE = True
 
 class Board():
     def __init__(self):
-        self.board = [[' ' for x in range(BOARD_WIDTH)]
-                        for y in range(BOARD_HEIGHT)]
         self.moves = random.randint(0, 1)  # Random player starts the game
 
     def whos_move(self) -> str:
@@ -209,9 +207,6 @@ class Board():
         print(board[3] + " | " + board[4] + " | " + board[5])
         print(board[6] + " | " + board[7] + " | " + board[8])
         
-
-
-
 
 def check_rows():
     """
