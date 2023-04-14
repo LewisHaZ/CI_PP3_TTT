@@ -175,6 +175,13 @@ class Board():
         print(board[0] + " | " + board[1] + " | " + board[2])
         print(board[3] + " | " + board[4] + " | " + board[5])
         print(board[6] + " | " + board[7] + " | " + board[8])
+    
+    def whos_move(self) -> str:
+        """
+        Alternate moves between player 1 and 2
+        """
+        pieces = ['X', 'O']
+        return pieces[self.moves % 2]
         
     def handle_turn(player):
         """
