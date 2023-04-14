@@ -169,7 +169,7 @@ def reset_board():
     A function to reset the board back
     to it's original state
     """
-    print(board)
+    display_board()
 
 
 def whos_move(self) -> str:
