@@ -169,7 +169,8 @@ def reset_board():
     A function to reset the board back
     to it's original state
     """
-    display_board()
+    for x in range(9):
+        board[x] = "-"
 
 
 def whos_move(self) -> str:
@@ -350,6 +351,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
+    reset_board()
     display_board()
     while GAME_ACTIVE:
 
@@ -406,7 +408,6 @@ def play_again():
         time.sleep(2)
         cls()
         run_game()
-        reset_board()
 
     elif selected == "2":
         time.sleep(1)
