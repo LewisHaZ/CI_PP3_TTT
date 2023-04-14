@@ -369,6 +369,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
+    display_board()
     while GAME_ACTIVE:
 
         handle_turn(CURRENT_PLAYER)
