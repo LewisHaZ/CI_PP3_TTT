@@ -232,6 +232,7 @@ def check_rows():
         return board[6]
     return
 
+
 def check_columns():
     """
     Checking if any of the columns have the same
@@ -252,6 +253,7 @@ def check_columns():
     elif col_3:
         return board[2]
     return
+
 
 def check_diagonals():
     """
@@ -408,6 +410,7 @@ def run_game():
         print(WINNER + " WON.")
     elif WINNER is None:
         print("It's a tie.")
+    play_again()
 
 
 def play_again():
