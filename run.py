@@ -207,7 +207,7 @@ class Board():
                 print("That space is already filled, go again.")
 
         board[position] = player
-        display_board()
+    display_board()
     
 
 def check_rows():
