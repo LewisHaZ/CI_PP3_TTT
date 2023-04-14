@@ -165,7 +165,7 @@ class Board():
         self.board = [[' ' for x in range(BOARD_WIDTH)]
                         for y in range(BOARD_HEIGHT)]
         self.moves = random.randint(0, 1)  # Random player starts the game
-        
+
     def display_board(self):
         """
         Displays the game board of 3 columns and 3 rows.
@@ -209,7 +209,6 @@ class Board():
         board[position] = player
         display_board()
     
-
     def check_game_over():
         """
         A function to check if the game
@@ -219,7 +218,6 @@ class Board():
         check_if_win()
         check_if_tie()
     
-
     def check_if_win():
         """
         A function to check if a player has won
@@ -240,6 +238,7 @@ class Board():
             WINNER = None
 
         return
+        check_win()
     
     def check_rows():
         """
@@ -262,7 +261,6 @@ class Board():
             return board[6]
         return
     
-
     def check_columns():
         """
         Checking if any of the columns have the same
@@ -284,7 +282,6 @@ class Board():
             return board[2]
         return
 
-    
     def check_diagonals():
         """
         Checking if any of the diagonals have the same
@@ -304,7 +301,6 @@ class Board():
             return board[6]
         return
 
-
     def check_if_tie():
         """
         A function to check if a player has tied
@@ -317,7 +313,6 @@ class Board():
             GAME_ACTIVE = False
         return
     
-
     def switch_player():
         """
         A function to switch from x's turn
@@ -332,53 +327,11 @@ class Board():
 
         return
 
-    def winning_move(self) -> bool:
-        """
-        Checking if any of the rows have the same
-        value BUT not the initial dash placeholder.
-        If the condition is met then it ends the
-        game.
-        """
-        last_row = self.last_move[0]
-        last_col = self.last_move[1]
-        last_move = self.board[last_row][last_col] # X or O
-
-        def row_win() -> bool:
-            for row in range(0, BOARD_HEIGHT):
-                for col in range(0, (BOARD_WIDTH)):
-                    if (last_move == self.board[row][col] and
-                        last_move == self.board[row][col+2]):
-                        return True
-            return False
-
-        def column_win() -> bool:
-            for row in range(0, (BOARD_HEIGHT)):
-                for col in range(0, BOARD_WIDTH):
-                    if (last_move == self.board[row][col] and
-                        last_move == self.board[row+2][col]):
-                        return True
-            return False
-
-        def diagonal_win() -> bool:
-            for row in range(3, BOARD_HEIGHT):
-                for col in range(0, (BOARD_WIDTH)):
-                    if (last_move == self.board[row][col] and
-                        last_move == self.board[row-1][col+1]):
-                        return True
-            
-            for row in range(0, BOARD_HEIGHT):
-                for col in range(0, (BOARD_WIDTH)):
-                    if (last_move == self.board[row][col] and
-                        last_move == self.board[row+1][col+1]):
-                        return True
-
-            return False
-
-        
-        if row_win() or column_win() or diagonal_win():
+    def check_win():
+        if row_wins or column_wins or diagonal_wins:
             cls()
             self.display_board()
-            if last_move == Col.RED + 'X':
+            if WINNER == Col.RED + 'X':
                 print(Col.BLUE + "\n----> " +
                        f"{val.player1name.upper()}" + " is the winner <----\n")
                 val.player1score += 1
