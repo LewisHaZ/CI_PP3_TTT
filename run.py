@@ -118,7 +118,7 @@ def start_game() -> str:
     """
     time.sleep(1)
     separate_line()
-    print(Col.YELLOW + "Is this your first time playing?")
+    print(Col.YELLOW + "Have you played previously?")
     answer = "1. Yes\n 2. No\n"
     answered = input(answer)
     separate_line()
