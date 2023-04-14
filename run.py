@@ -267,7 +267,6 @@ def check_if_win():
         WINNER = None
 
     return
-    check_win()
 
 
 def check_if_tie():
@@ -308,7 +307,7 @@ def check_win():
         separate_line()
         play_again()
     
-    return False   
+    return False
 
 
 def handle_turn(player):
@@ -378,8 +377,18 @@ def run_game():
 
         switch_player()
 
-    if WINNER == 'X' or WINNER == 'O':
-        print(WINNER + " WON.")
+    if WINNER == Col.RED + 'X':
+        print(Col.BLUE + "\n----> " +
+            f"{val.player1name.upper()}" + " is the winner <----\n")
+        val.player1score += 1
+        val.WORKSHEET.update_cell(val.player1email_row, 3, +
+                                 val.player1score) 
+    elif WINNER == 'O':
+        print(Col.BLUE + "\n---->  " +
+            f"{val.player2name.upper()}" + " is the winner <----\n")
+        val.player2score += 1
+        val.WORKSHEET.update_cell(val.player2email_row, 3, +
+                                 val.player2score)
     elif WINNER is None:
         print("It's a tie.")
     play_again()
