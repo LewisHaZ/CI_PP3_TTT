@@ -173,7 +173,7 @@ class Board():
         pieces = ['X', 'O']
         return pieces[self.moves % 2]
         
-    def handle_turn(player, display_board):
+    def handle_turn(self, player, display_board):
         """
         A function to deal with the game
         delegating each player their turn
@@ -198,17 +198,19 @@ class Board():
 
         board[position] = player
         display_board()
+    
+    def display_board(self):
+        """
+        Displays the game board of 3 columns and 3 rows.
+        Dimensions declared in a variable
+        """
+        print(" ")
+        print(board[0] + " | " + board[1] + " | " + board[2])
+        print(board[3] + " | " + board[4] + " | " + board[5])
+        print(board[6] + " | " + board[7] + " | " + board[8])
         
 
-def display_board(self):
-    """
-    Displays the game board of 3 columns and 3 rows.
-    Dimensions declared in a variable
-    """
-    print(" ")
-    print(board[0] + " | " + board[1] + " | " + board[2])
-    print(board[3] + " | " + board[4] + " | " + board[5])
-    print(board[6] + " | " + board[7] + " | " + board[8])
+
 
 
 def check_rows():
