@@ -166,7 +166,7 @@ class Board():
                         for y in range(BOARD_HEIGHT)]
         self.moves = random.randint(0, 1)  # Random player starts the game
     
-    def display_board(self):
+    def display_board():
         """
         Displays the game board of 3 columns and 3 rows.
         Dimensions declared in a variable
@@ -208,8 +208,8 @@ class Board():
 
         board[position] = player
         display_board()
+        
     
-
 def check_rows():
     """
     Checking if any of the rows have the same
