@@ -361,7 +361,6 @@ def run_game():
 
         if row_wins or column_wins or diagonal_wins:
             cls()
-            display_board()
             if WINNER == Col.RED + 'X':
                 print(Col.BLUE + "\n----> " +
                     f"{val.player1name.upper()}" + " is the winner <----\n")
