@@ -351,8 +351,6 @@ def run_game():
 
         switch_player()
 
-    if check_if_win():
-        cls()
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
                 f"{val.player1name.upper()}" + " is the winner <----\n")
@@ -365,7 +363,7 @@ def run_game():
             val.player2score += 1
             val.WORKSHEET.update_cell(val.player2email_row, 3, +
                                     val.player2score)
-        if WINNER is None:
+        elif WINNER is None:
             print("It's a tie.")
     play_again()
 
