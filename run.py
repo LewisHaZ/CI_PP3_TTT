@@ -146,7 +146,7 @@ def start_game() -> str:
 BOARD_WIDTH = 3
 BOARD_HEIGHT = 3
 
-board = ["-", "-", "-",
+BOARD = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-",]
 
@@ -164,14 +164,22 @@ def __init__(self):
     self.moves = random.randint(0, 1)  # Random player starts the game
 
 
-def reset_board():
+def reset_game():
     """
     A function to reset the board back
     to it's original state
     """
-    for x in range(9):
-        board[x] = "-"
-
+    global GAME_ACTIVE
+    global BOARD
+    global WINNER
+    global CURRENT_PLAYER
+    GAME_ACTIVE = True
+    BOARD = ["-", "-", "-",
+             "-", "-", "-",
+             "-", "-", "-",]
+    WINNER = None
+    CURRENT_PLAYER = 'X'
+   
 
 def whos_move(self) -> str:
     """
@@ -187,9 +195,9 @@ def display_board():
      Dimensions declared in a variable
     """
     print(" ")
-    print(board[0] + " | " + board[1] + " | " + board[2])
-    print(board[3] + " | " + board[4] + " | " + board[5])
-    print(board[6] + " | " + board[7] + " | " + board[8])
+    print(BOARD[0] + " | " + BOARD[1] + " | " + BOARD[2])
+    print(BOARD[3] + " | " + BOARD[4] + " | " + BOARD[5])
+    print(BOARD[6] + " | " + BOARD[7] + " | " + BOARD[8])
         
 
 def check_rows():
@@ -200,17 +208,17 @@ def check_rows():
     game.
     """
     global GAME_ACTIVE
-    row_1 = board[0] == board[1] == board[2] != "-"
-    row_2 = board[3] == board[4] == board[5] != "-"
-    row_3 = board[6] == board[7] == board[8] != "-"
+    row_1 = BOARD[0] == BOARD[1] == BOARD[2] != "-"
+    row_2 = BOARD[3] == BOARD[4] == BOARD[5] != "-"
+    row_3 = BOARD[6] == BOARD[7] == BOARD[8] != "-"
     if row_1 or row_2 or row_3:
         GAME_ACTIVE = False
     if row_1:
-        return board[0]
+        return BOARD[0]
     elif row_2:
-        return board[3]
+        return BOARD[3]
     elif row_3:
-        return board[6]
+        return BOARD[6]
     return
 
 
@@ -222,17 +230,17 @@ def check_columns():
     game.
     """
     global GAME_ACTIVE
-    col_1 = board[0] == board[3] == board[6] != "-"
-    col_2 = board[1] == board[4] == board[7] != "-"
-    col_3 = board[2] == board[5] == board[8] != "-"
+    col_1 = BOARD[0] == BOARD[3] == BOARD[6] != "-"
+    col_2 = BOARD[1] == BOARD[4] == BOARD[7] != "-"
+    col_3 = BOARD[2] == BOARD[5] == BOARD[8] != "-"
     if col_1 or col_2 or col_3:
         GAME_ACTIVE = False
     if col_1:
-        return board[0]
+        return BOARD[0]
     elif col_2:
-        return board[1]
+        return BOARD[1]
     elif col_3:
-        return board[2]
+        return BOARD[2]
     return
 
 
@@ -244,15 +252,15 @@ def check_diagonals():
     game.
     """
     global GAME_ACTIVE
-    diag_1 = board[0] == board[4] == board[8] != "-"
-    diag_2 = board[6] == board[4] == board[2] != "-"
+    diag_1 = BOARD[0] == BOARD[4] == BOARD[8] != "-"
+    diag_2 = BOARD[6] == BOARD[4] == BOARD[2] != "-"
 
     if diag_1 or diag_2:
         GAME_ACTIVE = False
     if diag_1:
-        return board[0]
+        return BOARD[0]
     elif diag_2:
-        return board[6]
+        return BOARD[6]
     return
      
 
@@ -286,7 +294,7 @@ def check_if_tie():
     is no - then the game is a tie.
     """
     global GAME_ACTIVE
-    if "-" not in board:
+    if "-" not in BOARD:
         GAME_ACTIVE = False
     return
 
@@ -309,12 +317,12 @@ def handle_turn(player):
 
         position = int(position) - 1
 
-        if board[position] == "-":
+        if BOARD[position] == "-":
             valid = True
         else:
             print("That space is already filled, go again.")
 
-    board[position] = player
+    BOARD[position] = player
     display_board()
 
 
@@ -351,7 +359,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
-    reset_board()
+    reset_game()
     display_board()
     while GAME_ACTIVE:
 
