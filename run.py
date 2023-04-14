@@ -160,7 +160,13 @@ CURRENT_PLAYER = 'X'
 GAME_ACTIVE = True
 
 
-def display_board():
+class Board():
+    def __init__(self):
+        self.board = [[' ' for x in range(BOARD_WIDTH)]
+                        for y in range(BOARD_HEIGHT)]
+        self.moves = random.randint(0, 1)  # Random player starts the game
+    
+    def display_board(self):
         """
         Displays the game board of 3 columns and 3 rows.
         Dimensions declared in a variable
@@ -169,13 +175,6 @@ def display_board():
         print(board[0] + " | " + board[1] + " | " + board[2])
         print(board[3] + " | " + board[4] + " | " + board[5])
         print(board[6] + " | " + board[7] + " | " + board[8])
-
-
-class Board():
-    def __init__(self):
-        self.board = [[' ' for x in range(BOARD_WIDTH)]
-                        for y in range(BOARD_HEIGHT)]
-        self.moves = random.randint(0, 1)  # Random player starts the game
   
     def whos_move(self) -> str:
         """
