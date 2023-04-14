@@ -379,8 +379,8 @@ def run_game():
                                     val.player2score)
         if WINNER is None:
             print("It's a tie.")
-        
-    
+        play_again()
+
 
 def play_again():
     """
