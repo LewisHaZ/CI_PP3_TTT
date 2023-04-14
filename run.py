@@ -160,7 +160,6 @@ CURRENT_PLAYER = 'X'
 GAME_ACTIVE = True
 
 
-
 def __init__(self):
     self.moves = random.randint(0, 1)  # Random player starts the game
 
@@ -173,33 +172,6 @@ def whos_move(self) -> str:
     return pieces[self.moves % 2]
 
 
-def handle_turn(player):
-    """
-    A function to deal with the game
-    delegating each player their turn
-    and switching between.
-    """
-    print(player + "'s turn.")
-    position = input("Choose a position from 1-9: ")
-
-    valid = False
-
-    while not valid:
-
-        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
-            position = input("Choose a position from 1-9: ")
-
-        position = int(position) - 1
-
-        if board[position] == "-":
-            valid = True
-        else:
-            print("That space is already filled, go again.")
-
-    board[position] = player
-    display_board()
-    
-    
 def display_board():
     """
     Displays the game board of 3 columns and 3 rows.
@@ -397,7 +369,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
-    game = Board()
+    game = run_game()
 
     game_won = False
 
