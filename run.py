@@ -317,10 +317,10 @@ def switch_player():
     """
     global CURRENT_PLAYER
     if CURRENT_PLAYER == "X":
-        print(f"it's 's" + {player1name + " turn"})
+        print(f"it's + {val.player1name} + 's turn")
         CURRENT_PLAYER = "O"
     elif CURRENT_PLAYER == "O":
-        print(f"it's 's" + {player2name + " turn"})
+        print(f"it's + {val.player2name} + 's turn")
         CURRENT_PLAYER = "X"
 
     return
