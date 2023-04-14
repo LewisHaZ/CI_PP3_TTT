@@ -207,7 +207,7 @@ class Board():
                 print("That space is already filled, go again.")
 
         board[position] = player
-        display_board()
+        GAME_ACTIVE.display_board()
     
     def check_game_over():
         """
@@ -330,7 +330,7 @@ class Board():
     def check_win():
         if row_wins or column_wins or diagonal_wins:
             cls()
-            self.display_board()
+            GAME_ACTIVE.display_board()
             if WINNER == Col.RED + 'X':
                 print(Col.BLUE + "\n----> " +
                        f"{val.player1name.upper()}" + " is the winner <----\n")
@@ -358,7 +358,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
-    display_board()
+    GAME_ACTIVE.display_board()
     while GAME_ACTIVE:
 
         handle_turn(CURRENT_PLAYER)
