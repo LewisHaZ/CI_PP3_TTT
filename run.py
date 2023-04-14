@@ -418,7 +418,7 @@ def play_again():
     Give players an option to carry on playing with same players names
     go back to the main menu or exit the game
     """
-    print(Col.GREEN + "What would you like to do:")
+    print(Col.BLUE + "What would you like to do:")
     options = "1) Play again\n2) Go to main menu\n\
 3) See your statistics\n4) Quit game\n"
     selected = input(options)
@@ -426,7 +426,7 @@ def play_again():
 
     # Validate if answer is either 1 or 2 or 3
     while selected not in ("1", "2", "3", "4"):
-        print(Col.GREEN + "Please choose between one of below options:")
+        print(Col.BLUE + "Please choose between one of below options:")
         selected = input(options)
 
         separate_line()
