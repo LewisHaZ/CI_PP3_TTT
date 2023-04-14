@@ -305,7 +305,7 @@ def handle_turn(player):
     delegating each player their turn
     and switching between.
     """
-    print(player + "'s turn.")
+    print(Col.RED + player + "'s turn.")
     position = input("Choose a position from 1-9: ")
 
     valid = False
@@ -334,10 +334,10 @@ def switch_player():
     """
     global CURRENT_PLAYER
     if CURRENT_PLAYER == "X":
-        print(f"{val.player1name} your turn now.")
+        print(Col.BLUE + f"{val.player1name} your turn now.")
         CURRENT_PLAYER = "O"
     elif CURRENT_PLAYER == "O":
-        print(f"{val.player2name} your turn now.")
+        print(Col.YELLOW + f"{val.player2name} your turn now.")
         CURRENT_PLAYER = "X"
 
     return
