@@ -183,7 +183,7 @@ class Board():
         pieces = ['X', 'O']
         return pieces[self.moves % 2]
         
-    def handle_turn(player):
+    def handle_turn(player, display_board):
         """
         A function to deal with the game
         delegating each player their turn
@@ -207,7 +207,7 @@ class Board():
                 print("That space is already filled, go again.")
 
         board[position] = player
-    display_board()
+        display_board()
     
 
 def check_rows():
