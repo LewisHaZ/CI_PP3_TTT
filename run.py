@@ -160,13 +160,7 @@ CURRENT_PLAYER = 'X'
 GAME_ACTIVE = True
 
 
-class Board():
-    def __init__(self):
-        self.board = [[' ' for x in range(BOARD_WIDTH)]
-                        for y in range(BOARD_HEIGHT)]
-        self.moves = random.randint(0, 1)  # Random player starts the game
-
-    def display_board(self):
+def display_board():
         """
         Displays the game board of 3 columns and 3 rows.
         Dimensions declared in a variable
@@ -175,7 +169,14 @@ class Board():
         print(board[0] + " | " + board[1] + " | " + board[2])
         print(board[3] + " | " + board[4] + " | " + board[5])
         print(board[6] + " | " + board[7] + " | " + board[8])
-    
+
+
+class Board():
+    def __init__(self):
+        self.board = [[' ' for x in range(BOARD_WIDTH)]
+                        for y in range(BOARD_HEIGHT)]
+        self.moves = random.randint(0, 1)  # Random player starts the game
+  
     def whos_move(self) -> str:
         """
         Alternate moves between player 1 and 2
@@ -207,7 +208,7 @@ class Board():
                 print("That space is already filled, go again.")
 
         board[position] = player
-        GAME_ACTIVE.display_board()
+        display_board()
     
     def check_game_over():
         """
@@ -330,7 +331,7 @@ class Board():
     def check_win():
         if row_wins or column_wins or diagonal_wins:
             cls()
-            GAME_ACTIVE.display_board()
+            display_board()
             if WINNER == Col.RED + 'X':
                 print(Col.BLUE + "\n----> " +
                        f"{val.player1name.upper()}" + " is the winner <----\n")
@@ -358,7 +359,7 @@ def run_game():
     displays the board and allows the game
     to start and finish.
     """
-    GAME_ACTIVE.display_board()
+    display_board()
     while GAME_ACTIVE:
 
         handle_turn(CURRENT_PLAYER)
