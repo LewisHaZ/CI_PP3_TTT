@@ -354,48 +354,23 @@ class Board():
 
 def run_game():
     """
-    A function to start the game once both players have
-    signed up, and validated everything
+    Runs through the logic for the game,
+    displays the board and allows the game
+    to start and finish.
     """
-    game = Board()
+    display_board()
+    while GAME_ACTIVE:
 
-    game_won = False
+        handle_turn(CURRENT_PLAYER)
 
-    while not game_won:
-        cls()
-        game.display_board()
+        check_game_over()
 
-        is_move_valid = False
+        switch_player()
 
-        while not is_move_valid:
-            if game.whos_move() == "X":
-                print(f"{val.player1name}'s move. " +
-                       "You play with " + Col.RED + "X")
-                player_move = input("Choose a free space between 1 - 9:\n")
-            
-            else:
-                print(f"{val.player2name}'s move." +
-                        "You play with " + Col.BLUE + "O")
-                player_move = input("Choose a free space between 1 and 9:\n")
-            
-            try:
-                if (int(player_move) > 0):
-                    is_move_valid = game.move(int(player_move)-1)
-                else:
-                    print(Col.RED + "Incorrect input, please try again\n")
-            except:
-                print(Col.RED + "Please choose a free space between 1 and 9\n")
-        
-        game_won = game.winning_move()
-
-        if game.moves == BOARD_HEIGHT * BOARD_WIDTH:
-            cls()
-            game.display_board()
-            print(Col.BLUE + "\n----> The game is over - it's a tie! <----\n")
-
-            time.sleep(2)
-            separate_line()
-            play_again()
+    if WINNER == 'X' or WINNER == 'O':
+        print(WINNER + " WON.")
+    elif WINNER is None:
+        print("It's a tie.")
 
 
 def play_again():
