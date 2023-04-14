@@ -164,6 +164,14 @@ def __init__(self):
     self.moves = random.randint(0, 1)  # Random player starts the game
 
 
+def reset_board():
+    """
+    A function to reset the board back
+    to it's original state
+    """
+    print(board)
+
+
 def whos_move(self) -> str:
     """
     Alternate moves between player 1 and 2
@@ -372,6 +380,7 @@ def run_game():
         if WINNER is None:
             print("It's a tie.")
     play_again()
+    reset_board()
 
 
 def play_again():
