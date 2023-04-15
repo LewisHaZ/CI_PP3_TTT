@@ -359,9 +359,9 @@ def run_game():
     while GAME_ACTIVE:
         cls()
         display_board()
+        switch_player()
         handle_turn(CURRENT_PLAYER)
         check_game_over()
-        switch_player()
     cls()
     if WINNER is not None:
         if WINNER == Col.RED + 'X':
