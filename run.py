@@ -320,7 +320,6 @@ def handle_turn(player):
             print("That space is already filled, go again.")
 
     BOARD[position] = player
-    display_board()
 
 
 def switch_player():
@@ -357,13 +356,11 @@ def run_game():
     to start and finish.
     """
     reset_game()
-    display_board()
     while GAME_ACTIVE:
         cls()
+        display_board()
         handle_turn(CURRENT_PLAYER)
-
         check_game_over()
-    
         switch_player()
     cls()
     if WINNER is not None:
