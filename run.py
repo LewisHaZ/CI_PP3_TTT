@@ -37,7 +37,6 @@ def logo():
     print(" ")
     print(Col.YELLOW + "                    a 2 player game.")
     separate_line()
-    time.sleep(1)
 
 
 def cls():
@@ -378,6 +377,8 @@ def run_game():
                                     val.player2score)
     else:
         print("It's a tie.")
+    time.sleep(2)
+    cls()
     play_again()
 
 
