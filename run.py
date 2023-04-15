@@ -60,7 +60,7 @@ def main_menu() -> str:
     This function will appear below the logo for the game,
     The user can select to view the rules or to start game.
     """
-    time.sleep(1)
+    # time.sleep(1)
     print(Col.YELLOW + "Please select from the following: ")
     menu_options = "1. Game rules\n2. Start game\n"
     menu_option_selected = input(menu_options)
