@@ -74,7 +74,6 @@ def main_menu() -> str:
 
     if menu_option_selected == "1":
         cls()
-        logo()
         rules()
 
     elif menu_option_selected == "2":
