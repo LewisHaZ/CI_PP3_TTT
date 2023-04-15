@@ -176,7 +176,7 @@ def reset_game():
     GAME_ACTIVE = True
     BOARD = ["-", "-", "-",
              "-", "-", "-",
-             "-", "-", "-",]
+             "-", "-", "-"]
     WINNER = None
     CURRENT_PLAYER = 'X'
    
@@ -283,8 +283,6 @@ def check_if_win():
     else:
         WINNER = None
 
-    return
-
 
 def check_if_tie():
     """
@@ -296,8 +294,7 @@ def check_if_tie():
     global GAME_ACTIVE
     if "-" not in BOARD:
         GAME_ACTIVE = False
-    return
-
+    
 
 def handle_turn(player):
     """
@@ -366,14 +363,10 @@ def run_game():
         handle_turn(CURRENT_PLAYER)
 
         check_game_over()
-
+    
         switch_player()
 
-    row_wins = check_rows()
-    column_wins = check_columns()
-    diagonal_wins = check_diagonals()
-
-    if row_wins or column_wins or diagonal_wins:
+    if WINNER is not None:
         cls()
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
@@ -382,14 +375,14 @@ def run_game():
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
                                     val.player1score)
         else:
-            print(Col.BLUE + "\n---->  " +
+            print(Col.YELLOW + "\n---->  " +
                 f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
             val.WORKSHEET.update_cell(val.player2email_row, 3, +
                                     val.player2score)
-        if WINNER is None:
-            print("It's a tie.")
-        play_again()
+    else:
+        print("It's a tie.")
+    play_again()
 
 
 def play_again():
