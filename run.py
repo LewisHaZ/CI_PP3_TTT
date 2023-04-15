@@ -60,7 +60,7 @@ def main_menu() -> str:
     This function will appear below the logo for the game,
     The user can select to view the rules or to start game.
     """
-    # time.sleep(1)
+    time.sleep(1)
     print(Col.YELLOW + "Please select from the following: ")
     menu_options = "1. Game rules\n2. Start game\n"
     menu_option_selected = input(menu_options)
@@ -91,22 +91,22 @@ def rules():
     they can exit this menu with any key
     """
     print(Col.YELLOW + "Game Rules are as follows: ")
-    # time.sleep(1)
+    time.sleep(1)
     print("The goal of tic-tac-toe is to be the first player to get three" +
           "in a row on a 3-by-3 grid")
-    # time.sleep(1)
+    time.sleep(1)
     print("This can be in a row, in a column or in a diagonal")
-    # time.sleep(1)
+    time.sleep(1)
     print("Be careful though, you need to stop your opponent from doing" +
           "the same")
-    # time.sleep(1)
+    time.sleep(1)
     print(Col.BLUE + "Tic Tac Toe is simple game of " +
                      "strategy and forward thinking.")
-    # time.sleep(1.5)
+    time.sleep(1.5)
     print(" ")
     print(Col.YELLOW + "So good luck and have fun!")
     print(" ")
-    # time.sleep(1)
+    time.sleep(1)
     separate_line()
     input("Enter any key to exit...\n")
     cls()

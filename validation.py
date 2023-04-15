@@ -245,7 +245,7 @@ def create_new_players(player_number: str) -> list:
             break
 
         else:
-            print(Col.RED + f"\nSorry {player} , this email is already in use.")
+            print(Col.RED + f"\nSorry {player}, this email is already in use.")
             print(Col.RED + "Please try again.\n")
     
     return [player, player_email, 0]
