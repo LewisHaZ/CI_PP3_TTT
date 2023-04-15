@@ -359,15 +359,14 @@ def run_game():
     reset_game()
     display_board()
     while GAME_ACTIVE:
-
+        cls()
         handle_turn(CURRENT_PLAYER)
 
         check_game_over()
     
         switch_player()
-
+    cls()
     if WINNER is not None:
-        cls()
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
                 f"{val.player1name.upper()}" + " is the winner <----\n")
