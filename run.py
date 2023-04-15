@@ -74,6 +74,9 @@ def main_menu() -> str:
 
     if menu_option_selected == "1":
         cls()
+        print("  ")
+        print("  ")
+        separate_line()
         rules()
 
     elif menu_option_selected == "2":
