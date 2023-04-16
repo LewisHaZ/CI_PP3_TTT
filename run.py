@@ -362,20 +362,19 @@ def run_game():
         check_game_over()
     cls()
     if WINNER is not None:
-        if WINNER == Col.RED + 'X':
-            print(Col.RED + "\n----> " +
-                  f"{val.player1name.upper()}" + " is the winner <----\n")
-            val.player1score += 1
-            val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                      val.player1score)
-        else:
-            print(Col.YELLOW + "\n---->  " +
-                  f"{val.player2name.upper()}" + " is the winner <----\n")
-            val.player2score += 1
-            val.WORKSHEET.update_cell(val.player2email_row, 3, +
-                                      val.player2score)
+        CURRENT_PLAYER == 'player1name'
+        print(Col.RED + "\n----> " +
+                f"{val.player1name.upper()}" + " is the winner <----\n")
+        val.player1score += 1
+        val.WORKSHEET.update_cell(val.player1email_row, 3, +
+                                  val.player1score)
     else:
-        print("It's a tie.")
+        print(Col.YELLOW + "\n---->  " +
+                f"{val.player2name.upper()}" + " is the winner <----\n")
+        val.player2score += 1
+        val.WORKSHEET.update_cell(val.player2email_row, 3, +
+                                  val.player2score)
+    
     time.sleep(2)
     cls()
     play_again()
@@ -401,7 +400,7 @@ def play_again():
 
     if selected == "1":
         print(Col.BLUE + "Starting a new game for " +
-              f"{val.player1name} & {val.player2name}!\n")
+              "{val.player1name} & {val.player2name}!\n")
         time.sleep(2)
         cls()
         run_game()
