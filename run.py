@@ -136,7 +136,7 @@ def start_game() -> str:
     elif answered == "2" or answered == "n":
         cls()
         logo()
-        val.register_new_players(val.players)
+        val.register_new_players()
     return answered
 
 

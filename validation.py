@@ -166,7 +166,7 @@ def register_single_player(player_number: str):
     update_players_worksheet(player_info)
 
 
-def register_new_players(players):
+def register_new_players():
     """
     A function to register a new player, asks for
     an input in terms of name. Saved to a variable,
@@ -184,7 +184,7 @@ def register_new_players(players):
     time.sleep(1)
     print(Col.YELLOW + "Beginning registration process...")
     print(" ")
-
+    global players
     try:
         while True:
             for i, player in enumerate(players):
@@ -194,22 +194,16 @@ def register_new_players(players):
                     player1name = player_1_info[0]
                     player1score = player_1_info[2]
                     player1email_row = WORKSHEET.find(player_1_info[1]).row
-                break
-            separate_line()
-            print(f"Thank you {player1name} " +
-                  "your details have been added and registered.\n")
-            time.sleep(2)
-            for i, player in enumerate(players):
-                if i == 0:
+                if i == 1:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
                     player2name = player_2_info[0]
                     player2score = player_2_info[2]
                     player2email_row = WORKSHEET.find(player_2_info[1]).row
-                break
-            separate_line()
-            print(f"Thank you {player2name} " +
-                  "your details have been added and registered.\n")
+                separate_line()
+                print(f"Thank you {player}  " +
+                      "your details have been added and registered.\n")
+                time.sleep(2)
             play_game_message(player1name, player2name)
             separate_line()
     except TypeError:
