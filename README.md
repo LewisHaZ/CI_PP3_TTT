@@ -34,7 +34,6 @@ The objective of the game is to be the first player to get their symbol three sp
   - [Validation](#validation)
   - [Testing](#testing)
     - [Manual Testing](#manual-testing)
-    - [Automated Testing](#automated-testing)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -187,7 +186,7 @@ With the guit game option, the user exits the program with a goodbye message.
 ### Flowchart
 
 <details><summary>Flowchart</summary>
-<img src="docs/">
+<img src="docs/flowchart.png">
 </details>
 
 ## Technologies Used
@@ -224,7 +223,7 @@ VSCode was used to write the project code using Code Institute template
 
 [Back to Table Of Contents](#table-of-contents)
 
-## Deployment & Local Development
+## Deployment
 The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
 <img src="docs/heroku/heroku1.png">
