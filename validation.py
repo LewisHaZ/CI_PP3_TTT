@@ -52,7 +52,7 @@ def existing_acc(players):
                         player1name = \
                             WORKSHEET.row_values(player1email_row)[0]
                         player1score = \
-                            int(WORKSHEET.row_values(player1email_row)[2])                     
+                            int(WORKSHEET.row_values(player1email_row)[2])
                         print(Col.RED + f"\nHello {player1name}!\n")
                     elif i == 1:
                         player2email_row = WORKSHEET.find(email).row
@@ -65,7 +65,7 @@ def existing_acc(players):
                     break
 
                 else:
-                    input_correct_email(player)              
+                    input_correct_email(player)
         time.sleep(2)
         play_game_message(player1name, player2name)
 
@@ -193,7 +193,7 @@ def register_new_players(players):
                     update_players_worksheet(player_1_info)
                     player1name = player_1_info[0]
                     player1score = player_1_info[2]
-                    player1email_row = WORKSHEET.find(player_1_info[1]).row            
+                    player1email_row = WORKSHEET.find(player_1_info[1]).row
                 elif i == 1:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
@@ -208,7 +208,7 @@ def register_new_players(players):
 
             time.sleep(2)
             play_game_message(player1name, player2name)
-            separate_line()    
+            separate_line()
     except TypeError:
         return None
 
@@ -216,7 +216,7 @@ def register_new_players(players):
 def create_new_players(player_number: str) -> list:
     """
     A function to create a new player, this gets
-    the player's inputted name and email and checks 
+    the player's inputted name and email and checks
     if it is already in the database.
     @param player_number(string): number of the player
     """
@@ -239,7 +239,6 @@ def create_new_players(player_number: str) -> list:
         else:
             print(Col.RED + f"\nSorry {player}, this email is already in use.")
             print(Col.RED + "Please try again.\n")
-   
     return [player, player_email, 0]
 
 
@@ -254,7 +253,6 @@ def validate_username(player_name: str) -> bool:
             print(Col.RED + "User name must be" +
                   "2 - 12 letters long.")
             print(Col.RED + "Please enter another name.\n")
-        
         elif not player_name.isalpha():
             print(Col.RED + "Player name must only contain letters." +
                   "Please enter another name.\n")
