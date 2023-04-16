@@ -13,7 +13,7 @@ import validation as val
 
 
 def logo():
-    """ 
+    """
     Displays game name
     """
     print(Col.YELLOW + "Welcome to:")
@@ -130,17 +130,14 @@ def start_game() -> str:
         answered = input(answer)
 
         separate_line()
-       
     if answered == "1" or answered == "y":
         cls()
         logo()
         val.existing_acc(val.players)
-     
     elif answered == "2" or answered == "n":
         cls()
         logo()
         val.register_new_players(val.players)
-        
     return answered
 
 
@@ -149,7 +146,7 @@ BOARD_HEIGHT = 3
 
 BOARD = ["-", "-", "-",
          "-", "-", "-",
-         "-", "-", "-",]
+         "-", "-", "-"]
 
 # Who has won?
 WINNER = None
@@ -180,7 +177,7 @@ def reset_game():
              "-", "-", "-"]
     WINNER = None
     CURRENT_PLAYER = 'X'
-   
+
 
 def whos_move(self) -> str:
     """
@@ -199,7 +196,7 @@ def display_board():
     print(BOARD[0] + " | " + BOARD[1] + " | " + BOARD[2])
     print(BOARD[3] + " | " + BOARD[4] + " | " + BOARD[5])
     print(BOARD[6] + " | " + BOARD[7] + " | " + BOARD[8])
-        
+
 
 def check_rows():
     """
@@ -227,7 +224,7 @@ def check_columns():
     """
     Checking if any of the columns have the same
     value BUT not the initial dash placeholder.
-    If the condition is met then it ends the 
+    If the condition is met then it ends the
     game.
     """
     global GAME_ACTIVE
@@ -249,7 +246,7 @@ def check_diagonals():
     """
     Checking if any of the diagonals have the same
     value BUT not the initial dash placeholder.
-    If the condition is met then it ends the 
+    If the condition is met then it ends the
     game.
     """
     global GAME_ACTIVE
@@ -263,7 +260,7 @@ def check_diagonals():
     elif diag_2:
         return BOARD[6]
     return
-     
+
 
 def check_if_win():
     """
@@ -288,14 +285,14 @@ def check_if_win():
 def check_if_tie():
     """
     A function to check if a player has tied
-    the game: this will check rows, columns 
+    the game: this will check rows, columns
     and diagonals for the - symbol, if there
     is no - then the game is a tie.
     """
     global GAME_ACTIVE
     if "-" not in BOARD:
         GAME_ACTIVE = False
-    
+
 
 def handle_turn(player):
     """
@@ -367,16 +364,16 @@ def run_game():
     if WINNER is not None:
         if WINNER == Col.RED + 'X':
             print(Col.BLUE + "\n----> " +
-                f"{val.player1name.upper()}" + " is the winner <----\n")
+                  f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
-                                    val.player1score)
+                                      val.player1score)
         else:
             print(Col.YELLOW + "\n---->  " +
-                f"{val.player2name.upper()}" + " is the winner <----\n")
+                  f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
             val.WORKSHEET.update_cell(val.player2email_row, 3, +
-                                    val.player2score)
+                                      val.player2score)
     else:
         print("It's a tie.")
     time.sleep(2)
