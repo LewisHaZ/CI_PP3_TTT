@@ -375,7 +375,7 @@ def run_game():
             val.WORKSHEET.update_cell(val.player2email_row, 3, +
                                       val.player2score)
         else:
-            print("<-> It's a TIE <->")
+            print(Col.RED + "<-> It's a TIE <->")
     time.sleep(2)
     cls()
     play_again()
