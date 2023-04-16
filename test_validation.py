@@ -16,7 +16,7 @@ class TestValidate(unittest.TestCase):
 
     def test_incorrect_email(self):
         self.assertEqual(val.validate_user_input('999999'), None)
-    
+
     def test_validate_username(self):
         self.assertTrue(val.validate_username('Lewis'), True)
 
