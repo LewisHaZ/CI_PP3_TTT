@@ -97,7 +97,7 @@ def rules():
     print("This can be in a row, in a column or in a diagonal")
     time.sleep(1)
     print("Be careful though, you need to stop your opponent from doing" +
-          "the same")
+          " the same")
     time.sleep(1)
     print(Col.BLUE + "Tic Tac Toe is simple game of " +
                      "strategy and forward thinking.")
