@@ -271,3 +271,21 @@ The website was deployed to [Heroku](https://id.heroku.com/) using the following
 
 [Back to Table Of Contents](#table-of-contents)
 
+## Credits
+
+### Images
+- [Flaticon](https://www.flaticon.com/free-icon/tictactoe_10249244) by Mayor Icon - used for the website favicon
+
+### Code
+- [ASCII Art Generator](http://patorjk.com/software/taag/) was used to create game title/logo
+- Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
+- [ColorSpace](https://mycolor.space/gradient) was used to create a gradient button and background effect
+- How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
+- [gspread documentation](https://docs.gspread.org/en/latest/user-guide.html) explained how to obtain a specific value from the google spreadsheet
+
+## Acknowledgements
+Many thanks to all those around me for the support, including:
+
+    Family, friends and my wonderful fiancee.
+    Mo Shami my tutor for the guidance.
+
