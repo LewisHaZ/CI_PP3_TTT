@@ -253,11 +253,11 @@ def validate_username(player_name: str) -> bool:
     try:
         if len(player_name) < 2 or len(player_name) > 12:
             print(Col.RED + "User name must be" +
-                  "2 - 12 letters long.")
+                  " 2 - 12 letters long.")
             print(Col.RED + "Please enter another name.\n")
         elif not player_name.isalpha():
             print(Col.RED + "Player name must only contain letters." +
-                  "Please enter another name.\n")
+                  " Please enter another name.\n")
 
         else:
             return True
