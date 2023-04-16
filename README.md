@@ -285,7 +285,8 @@ The website was deployed to [Heroku](https://id.heroku.com/) using the following
 
 ## Acknowledgements
 Many thanks to all those around me for the support, including:
+-A fellow software developer named Cameron.
+-Family, friends and my wonderful fiancee.
+-Mo Shami my tutor for the guidance.
 
-    Family, friends and my wonderful fiancee.
-    Mo Shami my tutor for the guidance.
 
