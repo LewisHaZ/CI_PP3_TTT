@@ -361,14 +361,14 @@ def run_game():
         handle_turn(CURRENT_PLAYER)
         check_game_over()
     cls()
-    while GAME_ACTIVE is False:
-        if WINNER == 'X':
+    if GAME_ACTIVE is False:
+        if WINNER == 'O':
             print(Col.RED + "\n----> " +
                   f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
                                       val.player1score)
-        elif WINNER == 'O':
+        elif WINNER == 'X':
             print(Col.YELLOW + "\n---->  " +
                   f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
