@@ -292,9 +292,7 @@ def check_if_tie():
     global GAME_ACTIVE
     if "-" not in BOARD:
         GAME_ACTIVE = False
-    print(Col.RED + "-> IT'S A TIE <-")
-    play_again()
-
+    
 
 def handle_turn(player):
     """
@@ -370,13 +368,14 @@ def run_game():
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
                                       val.player1score)
-    else:
-        if CURRENT_PLAYER == 'O':
+        elif CURRENT_PLAYER == 'O':
             print(Col.YELLOW + "\n---->  " +
                   f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
             val.WORKSHEET.update_cell(val.player2email_row, 3, +
                                       val.player2score)
+        else:
+            print("<-> It's a TIE <->")
     time.sleep(2)
     cls()
     play_again()
