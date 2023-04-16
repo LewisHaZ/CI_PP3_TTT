@@ -635,7 +635,7 @@ The website was deployed to [Heroku](https://id.heroku.com/) using the following
 
 ### Code
 - [ASCII Art Generator](http://patorjk.com/software/taag/) was used to create game title/logo
-- [Alexandracodes](https://github.com/aleksandracodes/CI_PP3_Connect4) with reference in her project in terms of ascii and how to import colors.
+- [Alexandracodes](https://github.com/aleksandracodes/CI_PP3_Connect4) with reference in her project in terms of unittesting and setting up imports.
 - Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
 - [ColorSpace](https://mycolor.space/gradient) was used to create a gradient button and background effect
 - How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
