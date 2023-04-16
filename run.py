@@ -1,14 +1,14 @@
-# Tic Tac Toe game
-# We want to have game board, and to display it
-# Something to handle play game
-# Something to handle the turns
-# Function to check for win or tie
-# Function to switch the turn from x to o
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+from colors import Color as Col
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import sys
 import random
 import time
 import os
-from colors import Color as Col
 import validation as val
 
 

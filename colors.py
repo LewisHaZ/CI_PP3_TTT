@@ -1,8 +1,14 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from colorama import init
 
 init(autoreset=True)
 
-
+"""
+A class to set up the colors to be used
+for text across the game.
+"""
 class Color:
     BLUE = "\033[0;34;48m"
     RED = "\033[0;31;48m"
