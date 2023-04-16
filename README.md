@@ -401,9 +401,8 @@ VSCode was used to write the project code using Code Institute template
 
 ### Unit Testing
 
-<details><summary>See unit testing</summary></details>
-
-<details><summary>Screenshot</summary>
+<details><summary>See unit testing</summary>
+<summary>Screenshots</summary>
 <img src="docs/unittesting/unittest-1-1.jpg">
 <img src="docs/unittesting/unittest-1-2.jpg">
 <img src="docs/unittesting/unittest-2-1.jpg">
