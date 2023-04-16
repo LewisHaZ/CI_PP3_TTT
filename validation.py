@@ -23,14 +23,15 @@ WORKSHEET = SHEET.worksheet("Players")
 
 players = ["Player1", "Player2"]
 
+
 def existing_acc(players):
     """
     This function takes the existing email addresses from the spreadsheet
     and welcomes them back, other content stored in the spreadsheet is the
     score achieved and name of the user.
     """
-    print(Col.BLUE + "Greetings user. " + 
-        "Please enter your login details.")
+    print(Col.BLUE + "Greetings user. " +
+          "Please enter your login details.")
 
     global player1name
     global player2name
@@ -51,8 +52,7 @@ def existing_acc(players):
                         player1name = \
                             WORKSHEET.row_values(player1email_row)[0]
                         player1score = \
-                            int(WORKSHEET.row_values(player1email_row)[2])
-                        
+                            int(WORKSHEET.row_values(player1email_row)[2])                     
                         print(Col.RED + f"\nHello {player1name}!\n")
                     elif i == 1:
                         player2email_row = WORKSHEET.find(email).row
@@ -65,8 +65,7 @@ def existing_acc(players):
                     break
 
                 else:
-                    input_correct_email(player)
-                
+                    input_correct_email(player)              
         time.sleep(2)
         play_game_message(player1name, player2name)
 
@@ -98,11 +97,10 @@ def validate_user_input(email: str):
     try:
         validate_email(email)
         return True
-    
     except EmailNotValidError as e:
         print(Col.RED + "\n" + str(e))
         print(Col.RED + "Please type a correct email address.\n")
-    
+
 
 def is_player_registered(email: str) -> bool:
     """
@@ -130,7 +128,6 @@ def input_correct_email(player: str):
 
     if selected_option == "1":
         print("Please type the email address again:")
-    
     elif selected_option == "2":
         register_single_player(player)
 
@@ -151,7 +148,6 @@ def email_not_registered() -> str:
         selected_option = input(options)
 
         separate_line()
-    
     return selected_option
 
 
@@ -197,8 +193,7 @@ def register_new_players(players):
                     update_players_worksheet(player_1_info)
                     player1name = player_1_info[0]
                     player1score = player_1_info[2]
-                    player1email_row = WORKSHEET.find(player_1_info[1]).row
-                
+                    player1email_row = WORKSHEET.find(player_1_info[1]).row            
                 elif i == 1:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
@@ -209,12 +204,11 @@ def register_new_players(players):
 
             separate_line()
             print(f"Thank you {player1name} & {player2name}, " +
-                    "your details have been added and registered.\n")
-            
+                  "your details have been added and registered.\n")
+
             time.sleep(2)
             play_game_message(player1name, player2name)
-            separate_line()
-        
+            separate_line()    
     except TypeError:
         return None
 
@@ -235,10 +229,9 @@ def create_new_players(player_number: str) -> list:
 
         if validate_username(player):
             break
-    
+
     while True:
         player_email = user_input_email(player)
-    
         if player_email not in email_column:
             print(Col.YELLOW + "\nThank you.\n")
             break
@@ -246,7 +239,7 @@ def create_new_players(player_number: str) -> list:
         else:
             print(Col.RED + f"\nSorry {player}, this email is already in use.")
             print(Col.RED + "Please try again.\n")
-    
+   
     return [player, player_email, 0]
 
 
@@ -258,13 +251,13 @@ def validate_username(player_name: str) -> bool:
     """
     try:
         if len(player_name) < 2 or len(player_name) > 12:
-            print(Col.RED + "User name must be" + 
-            "2 - 12 letters long.")
+            print(Col.RED + "User name must be" +
+                  "2 - 12 letters long.")
             print(Col.RED + "Please enter another name.\n")
         
         elif not player_name.isalpha():
             print(Col.RED + "Player name must only contain letters." +
-                "Please enter another name.\n")
+                  "Please enter another name.\n")
 
         else:
             return True
@@ -292,7 +285,7 @@ def play_game_message(player1name: str, player2name: str):
     separate_line()
     print(Col.BLUE + "Ready?")
     print(Col.RED + f"{player1name}" + Col.YELLOW +
-        " & " + Col.BLUE + f"{player2name}")
+          " & " + Col.BLUE + f"{player2name}")
     print(Col.BLUE + "Let's play...")
     separate_line()
     time.sleep(2)

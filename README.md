@@ -382,7 +382,7 @@ VSCode was used to write the project code using Code Institute template
 
 ## Validation
 
-[PEP8 Validation Service](http://pep8online.com/) was used to check the code for PEP8 requirements. All the code passes with no errors and no warnings to show.
+[PEP8 Validation Service by CODE INSTITUTE](https://pep8ci.herokuapp.com/#) was used to check the code for PEP8 requirements. Most of the code besides the run.py file run without errors, the errors on the run.py file were due to my logo ascii.
 
 | **Bug** | **Fix** |
 | ------- | ------- |
