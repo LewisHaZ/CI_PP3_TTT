@@ -403,12 +403,12 @@ VSCode was used to write the project code using Code Institute template
 
 <details><summary>See unit testing</summary>
 <summary>Screenshots</summary>
-<img src="docs/unittesting/unittest-1-1.jpg">
-<img src="docs/unittesting/unittest-1-2.jpg">
-<img src="docs/unittesting/unittest-2-1.jpg">
-<img src="docs/unittesting/unittest-2-2.jpg">
-<img src="docs/unittesting/unittest-3-1.jpg">
-<img src="docs/unittesting/unittest-3-2.jpg">
+<img src="docs/unittesting/unittest-1-1.png">
+<img src="docs/unittesting/unittest-1-2.png">
+<img src="docs/unittesting/unittest-2-1.png">
+<img src="docs/unittesting/unittest-2-2.png">
+<img src="docs/unittesting/unittest-3-1.png">
+<img src="docs/unittesting/unittest-3-2.png">
 </details>
 
 ### Manual Testing
