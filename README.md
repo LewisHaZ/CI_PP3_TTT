@@ -223,6 +223,166 @@ VSCode was used to write the project code using Code Institute template
 
 [Back to Table Of Contents](#table-of-contents)
 
+## Features
+
+## Main Menu
+- Provides user with graphic welcome message
+- Gives user option to view game rules or start game
+- User stories covered: 1, 2
+
+<details>
+    <summary>Main Menu Screenshot</summary>
+
+![Main menu](docs/features/main-menu.jpg)
+</details>
+
+### Game rules
+- Displays clear game rules
+- Allows user to return to the main menu once read
+- User stories covered: 2
+
+<details>
+    <summary>Game rules Screenshot</summary>
+
+![Game rules](docs/features/game-rules.jpg)
+</details>
+
+### Play options
+- Gives players options to either log in or create a new user
+- User stories covered: 4
+
+<details>
+    <summary>Play options Screenshot</summary>
+
+![Play options](docs/features/play-options.jpg)
+</details>
+
+### Log-in
+- Asks users for their email addresses
+- Informs them if the email they input is incorrect or not registered
+- Gives user alternative option to try another email or create a new player
+- If correct, saves their details to Google Spreadsheet
+- User stories covered: 4, 5, 12, 13, 14
+
+<details>
+    <summary>Log-in Screenshot</summary>
+
+![Log-in](docs/features/log-in.jpg)
+</details>
+
+<details>
+    <summary>Alternative options Screenshot</summary>
+
+![Log-in wrong email](docs/features/log-in-wrong-email.jpg)
+</details>
+
+### Sign-up
+- Asks user for their name and email address
+- Validates user input values
+- Informs user if the name they input is incorrect
+- Informs user if the email is already taken and asks for another one
+- User stories covered: 5, 12, 13, 14
+
+<details>
+    <summary>Sign-up Screenshot</summary>
+
+![Sign-up](docs/features/sign-up.jpg)
+</details>
+
+<details>
+    <summary>Sign-up name verification Screenshot</summary>
+
+![Sign-up](docs/features/sign-up-name-verify.jpg)
+</details>
+
+<details>
+    <summary>Sign-up email verification Screenshot</summary>
+
+![Sign-up wrong email](docs/features/sign-up-wrong-email.jpg)
+</details>
+
+### Users greeting
+- Displays a greeting message to the user once logged in
+- User stories covered: 3, 10
+
+<details>
+    <summary>Greeting Screenshot</summary>
+
+![User greeting](docs/features/user-greeting.jpg)
+</details>
+
+### Game
+- Displays the name of currect player
+- Players are asked to select a space available
+- Display warning message of incorrect space selected
+- Provide feedback on who's won the game
+- Gives options to play again after finished game
+- User stories covered: 3, 5, 6, 13, 14
+
+<details>
+    <summary>Game Screenshot</summary>
+
+![Game screen](docs/features/game-screen.jpg)
+</details>
+
+<details>
+    <summary>Incorrect Move in Game Screenshot</summary>
+
+![Move validation in Game screen](docs/features/game-screen-move-validation.jpg)
+</details>
+
+![Move validation in Game screen 2](docs/features/game-screen-move-validation2.jpg)
+</details>
+
+<details>
+    <summary>Winner Message Screenshot</summary>
+
+![Winner Message](docs/features/game-screen-winner-message.jpg)
+</details>
+
+### Finished Game options
+
+<details>
+    <summary>Finished Game options Screenshot</summary>
+
+![Finished Game options](docs/features/finished-game-options.jpg)
+</details>
+
+#### Play 
+- Restarts the game for the same players
+- User stories covered: 7
+
+<details>
+    <summary>Restart game Screenshot</summary>
+
+![Restart Game](docs/features/restart-game.jpg)
+</details>
+
+#### Go to main menu
+- Brings players to the main menu of the program
+
+#### See your statistics
+- Display number of games won so far by each logged player
+- User stories covered: 9
+
+<details>
+    <summary>See your statistics Screenshot</summary>
+
+![Statistics](docs/features/statistics.jpg)
+</details>
+
+#### Quit game
+- Exits the program with a goodbye message
+
+<details>
+    <summary>Quit game Screenshot</summary>
+
+![Quit Game](docs/features/quit-game.jpg)
+</details>
+
+## Validation
+
+[PEP8 Validation Service](http://pep8online.com/) was used to check the code for PEP8 requirements. All the code passes with no errors and no warnings to show.
 
 | **Bug** | **Fix** |
 | ------- | ------- |
