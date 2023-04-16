@@ -328,7 +328,7 @@ def switch_player():
     """
     global CURRENT_PLAYER
     if CURRENT_PLAYER == "X":
-        print(Col.BLUE + f"{val.player1name} your turn now.")
+        print(Col.RED + f"{val.player1name} your turn now.")
         CURRENT_PLAYER = "O"
     elif CURRENT_PLAYER == "O":
         print(Col.YELLOW + f"{val.player2name} your turn now.")
@@ -363,7 +363,7 @@ def run_game():
     cls()
     if WINNER is not None:
         if WINNER == Col.RED + 'X':
-            print(Col.BLUE + "\n----> " +
+            print(Col.RED + "\n----> " +
                   f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
