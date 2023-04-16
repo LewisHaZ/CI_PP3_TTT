@@ -198,7 +198,6 @@ def register_new_players(players):
             separate_line()
             print(f"Thank you {player1name} " +
                   "your details have been added and registered.\n")
-
             time.sleep(2)
             for i, player in enumerate(players):
                 if i == 0:
