@@ -93,7 +93,7 @@ def rules():
     print(Col.YELLOW + "Game Rules are as follows: ")
     time.sleep(1)
     print("The goal of tic-tac-toe is to be the first player to get three" +
-          "in a row on a 3-by-3 grid")
+          " in a row on a 3-by-3 grid")
     time.sleep(1)
     print("This can be in a row, in a column or in a diagonal")
     time.sleep(1)
@@ -292,6 +292,8 @@ def check_if_tie():
     global GAME_ACTIVE
     if "-" not in BOARD:
         GAME_ACTIVE = False
+    print(Col.RED + "-> IT'S A TIE <-")
+    play_again()
 
 
 def handle_turn(player):
@@ -361,16 +363,15 @@ def run_game():
         handle_turn(CURRENT_PLAYER)
         check_game_over()
     cls()
-    while GAME_ACTIVE is False:
-        if CURRENT_PLAYER != 'X':
+    if GAME_ACTIVE is False:
+        if CURRENT_PLAYER == 'X':
             print(Col.RED + "\n----> " +
                   f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
             val.WORKSHEET.update_cell(val.player1email_row, 3, +
                                       val.player1score)
-        break
     else:
-        if CURRENT_PLAYER != 'O':
+        if CURRENT_PLAYER == 'O':
             print(Col.YELLOW + "\n---->  " +
                   f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
