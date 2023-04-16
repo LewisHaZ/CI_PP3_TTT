@@ -223,6 +223,14 @@ VSCode was used to write the project code using Code Institute template
 
 [Back to Table Of Contents](#table-of-contents)
 
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| When selecting 'go back to main menu' option after the game has finished, the game title was not displayed | Move the function to the correct place |
+| Console clear command was clearing all the content needed to display the board | Move the clear console method to correct identation
+| Undefined player name was causing game to crash on email signup | Refactor code to allow the players to sign up seperately
+| There were quite a few errors and warnings related to exceeded number of characters in line, whitespace within a blank line, trailing white spaces or missing white spaces around operators | Split the comments or print functions into two separate rows maintaining correct indentation. Followed a guidance within pep8 online tool and corrected all warnings and errors |
+
 ## Deployment
 The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
 1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
