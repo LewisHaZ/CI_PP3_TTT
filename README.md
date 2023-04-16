@@ -404,12 +404,12 @@ VSCode was used to write the project code using Code Institute template
 <details><summary>See unit testing</summary></details>
 
 <details><summary>Screenshot</summary>
-<img src="docs/unittesting/unittesting-1-1.jpg">
-<img src="docs/unittesting/unittesting-1-2.jpg">
-<img src="docs/unittesting/unittesting-2-1.jpg">
-<img src="docs/unittesting/unittesting-2-2.jpg">
-<img src="docs/unittesting/unittesting-3-1.jpg">
-<img src="docs/unittesting/unittesting-3-2.jpg">
+<img src="docs/unittesting/unittest-1-1.jpg">
+<img src="docs/unittesting/unittest-1-2.jpg">
+<img src="docs/unittesting/unittest-2-1.jpg">
+<img src="docs/unittesting/unittest-2-2.jpg">
+<img src="docs/unittesting/unittest-3-1.jpg">
+<img src="docs/unittesting/unittest-3-2.jpg">
 </details>
 
 ### Manual Testing
@@ -423,7 +423,7 @@ VSCode was used to write the project code using Code Institute template
 | Main menu | Select option 1 | Users are presented with game rules | Works as expected |
 | Main menu | Select option 2 | Users are asked if they played the game before | Works as expected |
 
-<details><summary>Screenshot</summary>
+<details><summary>Screenshots </summary>
 <img src="docs/testing/user-story-1-1.jpg">
 <img src="docs/testing/user-story-1-2.jpg">
 <img src="docs/testing/user-story-1-3.jpg">
