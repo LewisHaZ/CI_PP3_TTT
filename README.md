@@ -33,6 +33,7 @@ The objective of the game is to be the first player to get their symbol three sp
   - [Features](#features)
   - [Validation](#validation)
   - [Testing](#testing)
+    - [Unit Testing](#unit-testing)
     - [Manual Testing](#manual-testing)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
@@ -397,6 +398,19 @@ VSCode was used to write the project code using Code Institute template
 </details>
 
 ## Testing
+
+### Unit Testing
+
+<details><summary>See unit testing</summary>
+
+<details><summary>Screenshot</summary>
+<img src="docs/unittesting/unittesting-1-1.jpg">
+<img src="docs/unittesting/unittesting-1-2.jpg">
+<img src="docs/unittesting/unittesting-2-1.jpg">
+<img src="docs/unittesting/unittesting-2-2.jpg">
+<img src="docs/unittesting/unittesting-3-1.jpg">
+<img src="docs/unittesting/unittesting-3-2.jpg">
+</details>
 
 ### Manual Testing
 <details><summary>See user stories testing</summary>
