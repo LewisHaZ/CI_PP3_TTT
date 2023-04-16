@@ -23,7 +23,6 @@ WORKSHEET = SHEET.worksheet("Players")
 
 players = ["Player1", "Player2"]
 
-
 def existing_acc(players):
     """
     This function takes the existing email addresses from the spreadsheet

@@ -40,3 +40,4 @@ class Database():
             
     def get_user_row_number(self, email):
         return self.worksheet.find(email, None, 2).row
+        
