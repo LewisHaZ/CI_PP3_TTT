@@ -92,8 +92,7 @@ def rules():
     """
     print(Col.YELLOW + "Game Rules are as follows: ")
     time.sleep(1)
-    print("The goal of tic-tac-toe is to be the first player to get three" +
-          " in a row on a 3-by-3 grid")
+    print("The goal is to be the first to get three in a row")
     time.sleep(1)
     print("This can be in a row, in a column or in a diagonal")
     time.sleep(1)
