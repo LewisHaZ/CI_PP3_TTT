@@ -559,7 +559,7 @@ VSCode was used to write the project code using Code Institute template
 
 </details>
 
-
+## Bugs
 
 | **Bug** | **Fix** |
 | ------- | ------- |
