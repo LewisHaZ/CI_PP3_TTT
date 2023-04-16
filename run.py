@@ -362,7 +362,7 @@ def run_game():
         check_game_over()
     cls()
     while GAME_ACTIVE is False:
-        if CURRENT_PLAYER == 'X':
+        if CURRENT_PLAYER != 'X':
             print(Col.RED + "\n----> " +
                   f"{val.player1name.upper()}" + " is the winner <----\n")
             val.player1score += 1
@@ -370,7 +370,7 @@ def run_game():
                                       val.player1score)
         break
     else:
-        if CURRENT_PLAYER == 'O':
+        if CURRENT_PLAYER != 'O':
             print(Col.YELLOW + "\n---->  " +
                   f"{val.player2name.upper()}" + " is the winner <----\n")
             val.player2score += 1
