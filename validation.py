@@ -194,19 +194,23 @@ def register_new_players(players):
                     player1name = player_1_info[0]
                     player1score = player_1_info[2]
                     player1email_row = WORKSHEET.find(player_1_info[1]).row
-                elif i == 1:
+                break
+            separate_line()
+            print(f"Thank you {player1name} " +
+                  "your details have been added and registered.\n")
+
+            time.sleep(2)
+            for i, player in enumerate(players):
+                if i == 0:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
                     player2name = player_2_info[0]
                     player2score = player_2_info[2]
                     player2email_row = WORKSHEET.find(player_2_info[1]).row
                 break
-
             separate_line()
-            print(f"Thank you {player1name} & {player2name}, " +
+            print(f"Thank you {player2name} " +
                   "your details have been added and registered.\n")
-
-            time.sleep(2)
             play_game_message(player1name, player2name)
             separate_line()
     except TypeError:
