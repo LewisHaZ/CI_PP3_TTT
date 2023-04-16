@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
+
     <title>Tic Tac Toe Game</title>
     <style>
         body {
@@ -178,13 +179,50 @@
         button {
             width: 200px;
             height: 40px;
+            background-image: linear-gradient(to right top, #ff0000, #ff6800, #ffa000, #ffd100, #f6ff00);
             background-color: #E84610;
-            border: 1px solid grey;
+            border: 1px solid black;
             color: white;
             text-transform: uppercase;
             margin: 10px;
-            border-radius: 8px;
+            border-radius: 15px;
         }
+
+        button:hover{
+            background-image: linear-gradient(to right top, #f6ff00,#ffd100, #ffa000, #ff6800, #ff0000);
+        }
+
+        /* Style the footer */
+        footer {
+            text-align: center;
+        }
+
+        .social-icons {
+            padding: 30px 0 0;
+        }
+
+        .social-icons > li {
+            display: inline;
+            margin: 15px;
+        }
+
+        .social-icons i {
+            font-size: 170%;
+        }
+
+        a:hover i:before {
+            color: #ffd100;
+        }
+
+        .social-icons i, .copyrights {
+            color: #fff;
+        }
+
+        .copyrights {
+            font-size: 90%;
+            padding: 10px 0;
+        }
+
     </style>
 </head>
 
