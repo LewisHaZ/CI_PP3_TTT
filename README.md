@@ -157,3 +157,117 @@ With the guit game option, the user exits the program with a goodbye message.
 </details>
 
 [Back to Table Of Contents](#table-of-contents)
+
+## User Stories
+
+### Users
+
+1. I want to have clear options to select in the main menu
+2. I want to be able to read the rules of the game
+3. I want to personalise the game and enter my name
+4. I want to be able to log-in if I return to the game
+5. I want to receive a real time feedback throughout the game
+6. I want to get a feedback when I win the game
+7. I want to be able to play multiple games when I'm logged in
+8. I want a random selection of the player to start a new game
+9. I want to see how many games I've won so far
+
+### Site Owner
+
+10. I want users to have a positive experience whilst playing the game
+11. I want users to easily select options from the menu
+12. I want user names and emails to be saved to Google Spreadsheet
+13. I want the user to get feedback in case of wrong input
+14. I want data entry to be validated, to guide the user on how to correctly format the input
+
+[Back to Table Of Contents](#table-of-contents)
+
+## Technical Design
+
+### Flowchart
+
+<details><summary>Flowchart</summary>
+<img src="docs/">
+</details>
+
+## Technologies Used
+
+### Languages
+
+- [Python](https://www.python.org/) programming language for the logic of the program
+
+### Frameworks & Tools
+
+- [Diagrams.net](https://app.diagrams.net/) was used to draw program flowchart
+- [Font Awesome](https://fontawesome.com/) - icons from Font Awesome were used in the footer below the program terminal
+- [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Google Cloud Platform](https://cloud.google.com/cloud-console/) was used to manage access and permissions to the Google Services such as Google auth, sheets etc.
+- [Google Sheets](https://www.google.co.uk/sheets/about/) were used to store players details
+- [PEP8](http://pep8online.com/) was used to check my code against Python conventions
+- [Heroku](https://dashboard.heroku.com/apps) was used to deploy the project into live environment
+VSCode was used to write the project code using Code Institute template
+
+### Libraries
+
+#### Python Libraries
+- os - used to clear terminal
+- random - used to alternate first player to start the game
+- sys & sleep - used to create a typing effect within the games rules
+- time - used to displayed delayed messages in the terminal
+
+#### Third Party Libraries
+- [colorama](https://pypi.org/project/colorama/) - JUSTIFICATION: I used this library to add color to the terminal and enhance user experience. I marked warning/error information with color red and user feedback with blue and green
+- [email_validator](https://pypi.org/project/email-validator/) - JUSTIFICATION: I used this library to validate if user email input is of the form name@</span>example.com
+- [gspread](https://docs.gspread.org/en/latest/) - JUSTIFICATION: I used gspread to add and manipulate data in my Google spreadsheet and to interact with Google APIs
+- [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/) - JUSTIFICATION: module used to set up the authentification needed to access the Google API and connect my Service Account with the Credentials function. A creds.json file is created with all details the API needs to access the google account. In deployment to Render this information is stored in the config var section.
+
+[Back to Table Of Contents](#table-of-contents)
+
+## Deployment & Local Development
+The website was deployed to [Heroku](https://id.heroku.com/) using the following process:
+1. Login or create an account at [Heroku](https://dashboard.heroku.com/)
+<img src="docs/heroku/heroku1.png">
+1. Click on New > Create new app in the top right of the screen.
+<img src="docs/heroku/heroku2.png">
+1. Add an app name and select location, then click 'create app'.
+<img src="docs/heroku/heroku3.png">
+1. Under the deploy tab of the next page, select connect to GitHub.
+1. Log in to your GitHub account when prompted.
+<img src="docs/heroku/heroku4.png">
+1. Select the repository that you want to be connected to the Heroku app.
+<img src="docs/heroku/heroku5.png">
+1. Click on the settings tab.
+<img src="docs/heroku/heroku6.png">
+1. Scroll down to the config vars section, and add 2 config vars:
+    * The first key is CREDS and the value here is the creds.json file that was generated for the google sheets API to work properly.
+    * The second key is PORT and the Value is 8000
+<img src="docs/heroku/heroku7.png">
+1. Once you have set up the config vars, scroll down to buildpacks (still under the settings tab)
+1. Add the Python and Node.js buildpacks to your app and make sure that when they are displayed, they appear in the order:
+    * Python
+    * Node.JS
+<img src="docs/heroku/heroku8.png">
+1. Navigate back to the settings tab.
+1. Select automatic deploys to allow Heroku to build the site with new changes each time changes are pushed to GitHub.
+<img src="docs/heroku/heroku9.png">
+1. In the 'manual deploy' section beneath this, make sure the branch selected is 'main' and click deploy branch.
+<img src="docs/heroku/heroku10.png">
+1. The site should now be built and Heroku should provide a url for the built site.
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button in top right corner
+3. You will then have a copy of the repository in your own GitHub account.
+   
+### Making a Local Clone
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it
+3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone <span>https://</span>github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone
+
+[Back to Table Of Contents](#table-of-contents)
+
