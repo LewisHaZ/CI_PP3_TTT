@@ -384,6 +384,183 @@ VSCode was used to write the project code using Code Institute template
 
 [PEP8 Validation Service by CODE INSTITUTE](https://pep8ci.herokuapp.com/#) was used to check the code for PEP8 requirements. Most of the code besides the run.py file run without errors, the errors on the run.py file were due to my logo ascii.
 
+<details><summary>PEP3 check for run.py</summary>
+<img src="docs/validation/run-py-validation.jpg">
+</details>
+
+<details><summary>PEP3 check for validation.py</summary>
+<img src="docs/validation/validation-py-validation.jpg">
+</details>
+
+<details><summary>PEP3 check for colors.py</summary>
+<img src="docs/validation/colors-py-validation.jpg">
+</details>
+
+## Testing
+
+### Manual Testing
+<details><summary>See user stories testing</summary>
+
+
+1. I want to have clear options to select in the main menu
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Main menu | Select option 1 | Users are presented with game rules | Works as expected |
+| Main menu | Select option 2 | Users are asked if they played the game before | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-1-1.jpg">
+<img src="docs/testing/user-story-1-2.jpg">
+<img src="docs/testing/user-story-1-3.jpg">
+<img src="docs/testing/user-story-1-4.jpg">
+</details>
+
+
+2. I want to be able to read the rules of the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Main menu | Select option 1 | Users are presented with game rules | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-2.jpg">
+</details>
+
+3. I want to personalise the game and enter my name
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Play game options | Select option 1 (log-in) | Users are asked to input their email addresses, and once validated, a greeting message with their name is displayed. Names are displayed during the game | Works as expected |
+| Play game options | Select option 2 (sign-up) | Users are asked to input their names, once validated the names are saved and greeting message displayed. Names are displayed during the game | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-3-1.jpg">
+<img src="docs/testing/user-story-3-2.jpg">
+</details>
+
+4. I want to be able to log-in if I return to the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Play game options | Select option 1 (log-in) | Returning users are asked to input the email address they registered before and once validated, a greeting message with their name is displayed | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-4.jpg">
+</details>
+
+5. I want to receive a real time feedback throughout the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| User Input Validation & Feedback through game play | Players will be informed if their input is invalid | Error messages displayed | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-5-1.jpg">
+<img src="docs/testing/user-story-5-2.jpg">
+</details>
+
+6. I want to get a feedback when I win the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game screen | Player has connected 3 pieces in a row, column or diagonal | Message is displayed with the winning player's name | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-6.jpg">
+</details>
+
+7. I want to be able to play multiple games when I'm logged in
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Finished Game options | User selects play again option  | The game restarts for the same players | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-7.jpg">
+</details>
+
+8. I want a random selection of the player to start a new game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Game screen | Once players have logged-in or signed-up the game is loaded  | Different user names display | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-8-1.jpg">
+<img src="docs/testing/user-story-8-2.jpg">
+</details>
+
+9. I want to see how many games I've won so far
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Finished Game options | Select option 3  | Display number of games won for Player1 & Player2 | Works as expected |
+
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-9.jpg">
+</details>
+
+10. I want users to have a positive experience whilst playing the game
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | Simple navigation and game play  | Colored messages and straightforward instructions | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-10-1.jpg">
+<img src="docs/testing/user-story-10-2.jpg">
+<img src="docs/testing/user-story-10-3.jpg">
+</details>
+
+11.  I want users to easily select options from the menu
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | User inputs invalid numeric value | Users are asked to try again between available options from the menu | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-11-1.jpg">
+<img src="docs/testing/user-story-11-2.jpg">
+</details>
+
+
+12.  I want user names and emails to be saved to Google Spreadsheet
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Log-in | Both users input their names and email address which has not been previously registered  | Username and email addresses are saved to Google Spreadsheet to the next available rows in columns 1 & 2 respectively | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/user-story-12.jpg">
+</details>
+
+13.  I want the user to get feedback in case of wrong input
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | User inputs invalid numeric value in the menu or game. User inputs invalid value during log-in or sign-up | Feedback message displayed to the user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-13-1.jpg">
+<img src="docs/testing/user-story-13-2.jpg">
+</details>
+
+14.  I want data entry to be validated, to guide the user on how to correctly format the input
+
+| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
+| ------------- | ----------------------------- | ---------------------------- | ----------------- |
+| Across all screen | User inputs invalid data | Feedback message with instructions diplayed to the user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/testing/user-story-14.jpg">
+</details>
+
+</details>
+
+
+
 | **Bug** | **Fix** |
 | ------- | ------- |
 | When selecting 'go back to main menu' option after the game has finished, the game title was not displayed | Move the function to the correct place |
