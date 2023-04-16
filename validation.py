@@ -200,7 +200,7 @@ def register_new_players(players):
                   "your details have been added and registered.\n")
             time.sleep(2)
             for i, player in enumerate(players):
-                if i == 1:
+                if i == 0:
                     player_2_info = create_new_players(player)
                     update_players_worksheet(player_2_info)
                     player2name = player_2_info[0]
