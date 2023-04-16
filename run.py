@@ -401,7 +401,7 @@ def play_again():
 
     if selected == "1":
         print(Col.BLUE + "Starting a new game for " +
-              "{val.player1name} & {val.player2name}!\n")
+              f"{val.player1name} & {val.player2name}!\n")
         time.sleep(2)
         cls()
         run_game()
