@@ -9,6 +9,10 @@ def input_email():
     return validation_input("Please enter your email", isValidEmail)
 
 
+def input_number():
+    return int(validation_input("Please enter a number", isValidNumber))
+
+
 def validation_input(prompt, validation):
     while True:
         input_val = input(prompt)
@@ -47,3 +51,7 @@ def isValidEmail(email):
         return f'{str(e)}\nPlease type a correct email address.'
 
 
+def isValidNumber(number):
+    if number.isDigit():
+        return None
+    return ""
